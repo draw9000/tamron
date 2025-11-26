@@ -1,0 +1,123 @@
+
+
+
+@use "sass:math";
+
+$breakpoint: (
+  sp: 'screen and (max-width: 767px)',
+  tab: 'screen and (max-width: 1060px)',
+  pc: 'screen and (min-width: 960px)'
+);
+
+@mixin media($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+   @content;
+  }
+}
+
+.tatete{
+  writing-mode:vertical-rl;
+  -ms-writing-mode:tb-rl;
+  text-orientation: upright;
+}
+
+
+$cc : #3e3e3e;
+$ccb : #333333;
+$bg : #fff;
+$sen : #A0A0A0;
+$w : #ffffff;
+$m : #0B0F5E;
+$ml : #301BB4;
+
+
+  
+/////////////////FONT//////////////////////////////
+// pxで指定された値をremに変換する関数
+@function to-rem($value, $base: 16) {
+  @return math.div($value, $base * 1px) * 1rem;
+  }
+  
+  //数値の小数点以下を指定した桁数（デフォルトは3桁）までに丸める。
+  @function round-to-precision($value, $precision: 3) {
+  $factor: math.pow(10, $precision);
+  @return math.div(math.round($value * $factor), $factor);
+  }
+  
+  //「画面幅が小さいときは $minValuePx、大きいときは $maxValuePx へ流動的に変化」する clamp() の式を自動生成する。
+  @function responsive-clamp(
+  $minValuePx,
+  $maxValuePx,
+  $minViewportPx,
+  $maxViewportPx
+  ) {
+  $minValueRem: to-rem($minValuePx);
+  $maxValueRem: to-rem($maxValuePx);
+  $variablePart: math.div(
+  ($maxValuePx - $minValuePx),
+  ($maxViewportPx - $minViewportPx)
+  ) * 1px;
+  
+  // 小数点以下第三位までにする
+  $variablePart: round-to-precision($variablePart, 3);
+  
+  $constant: to-rem(
+  $maxValuePx - ($maxViewportPx * math.div($variablePart, 1px))
+  );
+  
+  // 小数点以下第三位までにする
+  $constant: round-to-precision($constant, 3);
+  
+  @return clamp(
+  $minValueRem,
+  #{$constant} + #{100 * math.div($variablePart, 1px)}vw,
+  $maxValueRem
+  );
+  }
+
+
+$device: 0px;
+$mobile: 375px;
+$tablet: 768px;
+$desktopS: 1024px;
+$desktop: 1600px;
+
+@mixin onlyTablet {
+  @media only screen and (min-width: $tablet) and (max-width: $desktopS) {
+    $device: $tablet !global;
+    @content;
+    $device: 0px !global;
+  }
+}
+
+@mixin onlyDesktop {
+  @media only screen and (min-width: $desktopS + 1px) {
+    $device: $desktopS !global;
+    @content;
+    $device: 0px !global;
+  }
+}
+
+@function vw($px) {
+  @if $device == $desktopS {
+    @return clamp(calc($desktopS / $desktop * $px), calc($px / $desktop * 100vw), $px);
+  }
+  @else if $device == $tablet {
+    @return clamp($px, calc($px / $tablet * 100vw), calc($desktopS / $tablet * $px));
+  }
+
+  @return clamp($px, calc($px / $mobile * 100vw), calc($tablet / $mobile * $px));
+}
+
+
+.hogehoge {
+  padding-top: vw(20px);
+
+  @include onlyTablet {
+    padding-top: vw(60px);
+  }
+
+  @include onlyDesktop {
+    padding-top: vw(120px);
+  }
+}

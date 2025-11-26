@@ -1,0 +1,105 @@
+@use 'temp/mixin' as *;
+
+
+#kv {
+  background: #0052a6;
+  background: url("/assets/image/top/kv_bg.png") no-repeat 0 0;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh + 400px);
+    clip-path: inset(35% 35% 35% 35%);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      object-position: center center;
+    }
+  }
+}
+
+#copy{
+    position: absolute;
+    top:0;left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    .encopy{
+        position: absolute;
+        font-size: 12vw;
+        color: $w;
+        line-height: 1;
+        &.en01{
+            top:25%;
+            right: 15%;
+        }
+        &.en02{
+            top:45%;
+            left: 8%;
+        }
+        &.en03{
+            top:69%;
+            left: 25%;
+        }
+    }
+    .jpcopy{
+        position: absolute;
+        top:40%;
+        right: 30%;
+        display: flex;
+        gap: 0.2rem;
+        align-items: flex-start;
+
+        p{
+            margin: 0;
+            padding: 0.5rem 0;
+            background: #000;
+            color: $w;
+            
+        }
+    }
+}
+
+  #concept {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 800px;
+  z-index: 10;
+  .overlays{
+    display: block; position: absolute; width: 100%; height: 100%; top:0; left:0; content:""; z-index:3;
+    background: rgba(#000,0.6);
+  }
+
+
+  .in {
+    width: min(90vw, 960px);
+    font-size: 1.3rem;
+    font-size: clamp(1rem,2vw,1.3rem);
+    color: #fff;
+    position: absolute;
+    z-index: 100;
+    p{
+        margin: 0 0 1rem 0;
+    }
+  }
+}
+
+
+#contents{
+    min-height: 200vh;
+    background: #F1F1F1;
+}

@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+@use "mixin" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Antique&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap');
+
+html{
+  @include media(sp){
+  font-size: 80%;
+  }
+}
+
+:root {
+  --font-size-min: 14;
+  --font-size-max: 18;
+  --font-ratio-min: 1;
+  --font-ratio-max: 1.2;
+  --font-width-min: 320;
+  --font-width-max: 1400;
+  --font-letter-spacing: 0.05em;
+  --font-line-height: 1.8;
+
+  --font-en:3rem;
+  --font-jp:2.4rem;
+
+  /* powを使用したより効率的なfluid typography */
+  --fluid-0-min: calc(var(--font-size-min) * pow(var(--font-ratio-min), 0));
+  --fluid-0-max: calc(var(--font-size-max) * pow(var(--font-ratio-max), 0));
+  --fluid-0-preferred: calc((var(--fluid-0-max) - var(--fluid-0-min)) / (var(--font-width-max) - var(--font-width-min)));
+  --fluid-0: clamp(
+    (var(--fluid-0-min) / 10) * 1rem,
+    ((var(--fluid-0-min) / 10) * 1rem) - (((var(--fluid-0-preferred) * var(--font-width-min)) / 10) * 1rem) + (var(--fluid-0-preferred) * 100vi),
+    (var(--fluid-0-max) / 10) * 1rem
+  );
+
+  --fluid-1-min: calc(var(--font-size-min) * pow(var(--font-ratio-min), 1));
+  --fluid-1-max: calc(var(--font-size-max) * pow(var(--font-ratio-max), 1));
+  --fluid-1-preferred: calc((var(--fluid-1-max) - var(--fluid-1-min)) / (var(--font-width-max) - var(--font-width-min)));
+  --fluid-1: clamp(
+    (var(--fluid-1-min) / 10) * 1rem,
+    ((var(--fluid-1-min) / 10) * 1rem) - (((var(--fluid-1-preferred) * var(--font-width-min)) / 10) * 1rem) + (var(--fluid-1-preferred) * 100vi),
+    (var(--fluid-1-max) / 10) * 1rem
+  );
+
+  --fluid-2-min: calc(var(--font-size-min) * pow(var(--font-ratio-min), 2));
+  --fluid-2-max: calc(var(--font-size-max) * pow(var(--font-ratio-max), 2));
+  --fluid-2-preferred: calc((var(--fluid-2-max) - var(--fluid-2-min)) / (var(--font-width-max) - var(--font-width-min)));
+  --fluid-2: clamp(
+    (var(--fluid-2-min) / 10) * 1rem,
+    ((var(--fluid-2-min) / 10) * 1rem) - (((var(--fluid-2-preferred) * var(--font-width-min)) / 10) * 1rem) + (var(--fluid-2-preferred) * 100vi),
+    (var(--fluid-2-max) / 10) * 1rem
+  );
+
+  --fluid-3-min: calc(var(--font-size-min) * pow(var(--font-ratio-min), 3));
+  --fluid-3-max: calc(var(--font-size-max) * pow(var(--font-ratio-max), 3));
+  --fluid-3-preferred: calc((var(--fluid-3-max) - var(--fluid-3-min)) / (var(--font-width-max) - var(--font-width-min)));
+  --fluid-3: clamp(
+    (var(--fluid-3-min) / 10) * 1rem,
+    ((var(--fluid-3-min) / 10) * 1rem) - (((var(--fluid-3-preferred) * var(--font-width-min)) / 10) * 1rem) + (var(--fluid-3-preferred) * 100vi),
+    (var(--fluid-3-max) / 10) * 1rem
+  );
+
+  --fluid-3: 1rem;
+}
+
+
+body {
+    color: #0e0e0e;
+    font-family:"Noto Sans JP", YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;
+    font-size: .875rem;
+  letter-spacing: var(--font-letter-spacing, 0.05em);
+  line-height:2;
+
+    //font-family: ten-mincho-antique, sans-serif;
+    
+
+
+}
+
+.gothic{
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  
+}
+.min{
+  font-family: "Zen Antique", serif;
+}
+.en{
+  font-family: "ClashDisplay-Semibold", sans-serif;
+}
+.enm{
+  font-family: "ClashDisplay-Medium", sans-serif;
+}
+
+.serif{
+  font-family: "Noto Serif JP", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashDisplay-Light';
+  src: url('../fonts/ClashDisplay-Light.woff2') format('woff2'),
+       url('../fonts/ClashDisplay-Light.woff') format('woff'),
+       url('../fonts/ClashDisplay-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ClashDisplay-Regular';
+  src: url('../fonts/ClashDisplay-Regular.woff2') format('woff2'),
+       url('../fonts/ClashDisplay-Regular.woff') format('woff'),
+       url('../fonts/ClashDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ClashDisplay-Medium';
+  src: url('../fonts/ClashDisplay-Medium.woff2') format('woff2'),
+       url('../fonts/ClashDisplay-Medium.woff') format('woff'),
+       url('../fonts/ClashDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ClashDisplay-Semibold';
+  src: url('../fonts/ClashDisplay-Semibold.woff2') format('woff2'),
+       url('../fonts/ClashDisplay-Semibold.woff') format('woff'),
+       url('../fonts/ClashDisplay-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}

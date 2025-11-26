@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <title></title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="og:title" content="" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="">
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="stylesheet" href="/assets/css/common.css?v=1">
+  <link rel="stylesheet" href="/assets/css/top.css?v=1">
+</head>
+
+<body>
+  <header id="recruit_header"></header>
+
+  <main>
+
+    <div id="kv">
+
+      <div class="image">
+        <img src="/assets/image/top/visual.jpg" alt="">
+      </div>
+
+      <div id="copy">
+        <p class="encopy en01 en">FOCUS</p>
+        <p class="encopy en02 en">YOUR</p>
+        <p class="encopy en03 en">TALENT.</p>
+        <div class="jpcopy">
+          <p class="tatete">その想いに</p><br>
+          <p class="tatete">まっすぐ向き合える</p><br>
+          <p class="tatete">毎日を。</p>
+        </div>
+      </div>
+
+      <div id="concept">
+        <div class="overlays"></div>
+        <div class="in">
+        <p>
+          選ばされた道じゃなく、自分で選んだ道を。<br>
+「好き」や「得意」を、遠慮せずにぶつけられる毎日を。
+        </p><p>
+タムロンの仕事は、誰かの背中をなぞるものじゃない。<br>
+自分の選んだ道で、自分の意思で、得意を磨いていける。
+</p><p>
+興味のあることに正面から向き合い、<br>
+経験と知識が、誰かの力になる瞬間を積み重ねていく。
+</p><p>
+そうして築いた日々が、やがて”自分だけの仕事”になっていく。
+</p><p>
+まっすぐに向き合った分だけ、<br>
+未来は、色濃く、深く、広がっていく。
+</p><p>
+Focus Your Talent.<br>
+その想いに、まっすぐ向き合える毎日を。
+        </p>
+      </div>
+      </div>
+
+   
+
+
+
+    </div>
+
+    <div id="contents">
+        
+    </div>
+
+
+   
+  </main>
+
+  <footer id="recruit_footer"></footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="/assets/js/script.js?v=250201" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  
+  <script>
+    if (typeof ScrollTrigger !== "undefined" && typeof gsap !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+      const visualImage = document.querySelector("#kv .image");
+      const concept = document.querySelector("#concept");
+      const copy = document.querySelector("#copy");
+
+      if (visualImage) {
+        gsap.set(visualImage, {
+          scale: 0.3,
+          transformOrigin: "center center"
+        });
+
+        if (concept) {
+          gsap.set(concept, { opacity: 0 });
+        }
+
+        if (copy) {
+          gsap.set(copy, { opacity: 1 });
+        }
+
+        const visualTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#kv",
+            start: "top top",
+            end: () => `+=${window.innerHeight * 2}`,
+            scrub: true,
+            pin: true,
+            pinSpacing: true,
+            markers: false
+          }
+        });
+
+        visualTimeline.to(
+          visualImage,
+          {
+            scale: 1,
+            ease: "power1.out"
+          },
+          0
+        );
+
+        visualTimeline.to(
+          visualImage,
+          {
+            clipPath: "inset(0% 0% 0% 0%)"
+          },
+          0
+        );
+
+        if (copy) {
+          visualTimeline.to(
+            copy,
+            {
+              opacity: 0,
+              ease: "power1.out"
+            },
+            0
+          );
+        }
+
+        if (concept) {
+          visualTimeline.to(
+            concept,
+            {
+              opacity: 1,
+              ease: "power1.out"
+            },
+            0.85
+          );
+        }
+      }
+    }
+  </script>
+</body>
+</html>

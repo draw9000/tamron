@@ -1,0 +1,68 @@
+
+@charset "utf-8";
+
+@use "mixin" as *;
+
+
+header {
+  transition: none !important; // 初期は無効
+  //opacity: 0;
+}
+#entry_btn{
+  button{
+transition: none !important; // 初期は無効
+  }
+}
+html.is-header-ready  {
+  header{
+  transition:all .3s ease !important;
+  opacity: 1;
+  }
+  #entry_btn{
+    button{
+      transition:all .3s ease !important;
+    }
+  }
+}
+
+
+header{
+
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  background: none;
+
+  display: flex;
+  justify-content: space-between;
+  z-index: 5000;
+  padding: 1rem;
+  border-bottom: 1px solid $w;
+  #logo{
+    display: flex;
+    .image{
+      width: 150px;
+    }
+    .txt{
+
+    }
+  }
+}
+
+#gnav{
+  ul{
+    display: flex;
+    li{
+      a{
+
+      }
+    }
+  }
+}
+
+
+
+///entry_btn
+/// 
+/// 

@@ -1,0 +1,95 @@
+@use "temp/reset";
+@use "temp/mixin" as *;
+
+@use "temp/header";
+@use "temp/footer";
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap');
+
+
+
+html{
+  @include media(sp){
+  font-size: 80%;
+  }
+}
+
+:root {
+  --font-size-min: 14;
+  --font-size-max: 18;
+  --font-ratio-min: 1;
+  --font-ratio-max: 1.2;
+  --font-width-min: 320;
+  --font-width-max: 1400;
+  --font-letter-spacing: 0.05em;
+  --font-line-height: 1.8;
+
+  --font-en:3rem;
+  --font-jp:2.4rem;
+
+  /* powを使用したより効率的なfluid typography */
+  --fluid-0-min: calc(var(--font-size-min) * pow(var(--font-ratio-min), 0));
+  --fluid-0-max: calc(var(--font-size-max) * pow(var(--font-ratio-max), 0));
+  --fluid-0-preferred: calc((var(--fluid-0-max) - var(--fluid-0-min)) / (var(--font-width-max) - var(--font-width-min)));
+  --fluid-0: clamp(
+    (var(--fluid-0-min) / 10) * 1rem,
+    ((var(--fluid-0-min) / 10) * 1rem) - (((var(--fluid-0-preferred) * var(--font-width-min)) / 10) * 1rem) + (var(--fluid-0-preferred) * 100vi),
+    (var(--fluid-0-max) / 10) * 1rem
+  );
+
+  --fluid-1-min: calc(var(--font-size-min) * pow(var(--font-ratio-min), 1));
+  --fluid-1-max: calc(var(--font-size-max) * pow(var(--font-ratio-max), 1));
+  --fluid-1-preferred: calc((var(--fluid-1-max) - var(--fluid-1-min)) / (var(--font-width-max) - var(--font-width-min)));
+  --fluid-1: clamp(
+    (var(--fluid-1-min) / 10) * 1rem,
+    ((var(--fluid-1-min) / 10) * 1rem) - (((var(--fluid-1-preferred) * var(--font-width-min)) / 10) * 1rem) + (var(--fluid-1-preferred) * 100vi),
+    (var(--fluid-1-max) / 10) * 1rem
+  );
+
+  --fluid-2-min: calc(var(--font-size-min) * pow(var(--font-ratio-min), 2));
+  --fluid-2-max: calc(var(--font-size-max) * pow(var(--font-ratio-max), 2));
+  --fluid-2-preferred: calc((var(--fluid-2-max) - var(--fluid-2-min)) / (var(--font-width-max) - var(--font-width-min)));
+  --fluid-2: clamp(
+    (var(--fluid-2-min) / 10) * 1rem,
+    ((var(--fluid-2-min) / 10) * 1rem) - (((var(--fluid-2-preferred) * var(--font-width-min)) / 10) * 1rem) + (var(--fluid-2-preferred) * 100vi),
+    (var(--fluid-2-max) / 10) * 1rem
+  );
+
+  --fluid-3-min: calc(var(--font-size-min) * pow(var(--font-ratio-min), 3));
+  --fluid-3-max: calc(var(--font-size-max) * pow(var(--font-ratio-max), 3));
+  --fluid-3-preferred: calc((var(--fluid-3-max) - var(--fluid-3-min)) / (var(--font-width-max) - var(--font-width-min)));
+  --fluid-3: clamp(
+    (var(--fluid-3-min) / 10) * 1rem,
+    ((var(--fluid-3-min) / 10) * 1rem) - (((var(--fluid-3-preferred) * var(--font-width-min)) / 10) * 1rem) + (var(--fluid-3-preferred) * 100vi),
+    (var(--fluid-3-max) / 10) * 1rem
+  );
+
+  --fluid-3: 1rem;
+}
+
+
+body {
+    color: #0e0e0e;
+    font-family:"Noto Sans JP", YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;
+    font-size: 1rem;
+  letter-spacing: var(--font-letter-spacing, 0.05em);
+  line-height:2;
+
+    //font-family: ten-mincho-antique, sans-serif;
+    
+
+
+}
+
+.en{
+  font-family: "Archivo", sans-serif;
+}
+
+
+main{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 3;
+  display: block;
+}
