@@ -195,15 +195,132 @@ function initializeTopMessageAnimation() {
 $(function () {
 
   $('#recruit_header').load('/header.html?v=2', function () {
+    console.log("Header loaded");
     handleDrawer(".draw01", ".drawer01");
     handleDrawer(".draw02", ".drawer02");
     handleDrawer(".draw03", ".drawer03");
     handleDrawer(".draw04", ".drawer04");
     handleDrawer(".draw05", ".drawer05");
     const spMenuButton = document.getElementById("sp_menu");
+    console.log("spMenuButton found:", spMenuButton);
     if (spMenuButton) {
+      // Magnetic Effect
+      // Magnetic Effect
+      const header = document.getElementById("recruit_header");
+      if (header) {
+        header.addEventListener("mousemove", (e) => {
+          const rect = spMenuButton.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const deltaX = e.clientX - centerX;
+          const deltaY = e.clientY - centerY;
+          const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+          const isMobile = window.innerWidth <= 768;
+          const isMenuOpen = spMenuButton.classList.contains("active");
+
+          // Only activate if:
+          // 1. Within range (100px)
+          // 2. Not on mobile
+          // 3. Menu is not open
+          if (distance < 100 && !isMobile && !isMenuOpen) {
+            gsap.to(spMenuButton, {
+              x: deltaX * 0.4,
+              y: deltaY * 0.4,
+              duration: 0.4,
+              ease: "power2.out"
+            });
+          } else {
+            gsap.to(spMenuButton, {
+              x: 0,
+              y: 0,
+              duration: 0.4,
+              ease: "power2.out"
+            });
+          }
+        });
+
+        header.addEventListener("mouseleave", () => {
+          gsap.to(spMenuButton, {
+            x: 0,
+            y: 0,
+            duration: 0.8,
+            ease: "elastic.out(1, 0.3)"
+          });
+        });
+      }
+
       spMenuButton.addEventListener("click", () => {
+        console.log("Menu clicked");
         spMenuButton.classList.toggle("active");
+        const overlayMenu = document.getElementById("overlay_menu");
+        if (overlayMenu) {
+          const isActive = spMenuButton.classList.contains("active");
+          const navListItems = overlayMenu.querySelectorAll(".nav_list li");
+          const entryArea = overlayMenu.querySelector(".entry_area");
+
+          if (isActive) {
+            // OPEN
+            overlayMenu.classList.add("active");
+            document.body.style.overflow = "hidden";
+
+            // Reset initial states for animation
+            gsap.set(overlayMenu, { visibility: "visible" });
+            gsap.set(navListItems, { opacity: 0, x: 50 });
+            gsap.set(entryArea, { opacity: 0, y: 20 });
+
+            const tl = gsap.timeline();
+            tl.to(overlayMenu, {
+              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+              duration: 0.8,
+              ease: "expo.inOut"
+            })
+              .to(navListItems, {
+                opacity: 1,
+                x: 0,
+                duration: 0.8,
+                stagger: 0.08,
+                ease: "expo.out"
+              }, "-=0.2")
+              .to(entryArea, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "expo.out"
+              }, "-=0.6");
+
+          } else {
+            // CLOSE
+            document.body.style.overflow = "";
+
+            const tl = gsap.timeline();
+
+            tl.to(entryArea, {
+              opacity: 0,
+              y: 20,
+              duration: 0.4,
+              ease: "power2.in"
+            })
+              .to(navListItems, {
+                opacity: 0,
+                x: 50,
+                duration: 0.4,
+                stagger: {
+                  each: 0.05,
+                  from: "end"
+                },
+                ease: "power2.in"
+              }, "-=0.2")
+              .to(overlayMenu, {
+                clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+                duration: 0.8,
+                ease: "expo.inOut",
+                onComplete: () => {
+                  overlayMenu.classList.remove("active");
+                  gsap.set(overlayMenu, { visibility: "hidden", clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" });
+                }
+              }, "-=0.2");
+          }
+        }
       });
     }
   });

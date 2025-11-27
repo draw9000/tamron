@@ -139,7 +139,7 @@ transform-origin: left top; /*左から右に向かう*/
 }
 
 #intern_btn{
-  margin: 0 2rem;
+  margin: 0 1rem;
   a{
     display: inline-block;
     background: $w;
@@ -159,14 +159,29 @@ transform-origin: left top; /*左から右に向かう*/
   width: 4rem; 
   height: 2.8rem; 
   cursor: pointer;
+  padding: 0.5rem 1rem;
   span{
     position: absolute;
     background-color: #ffffff;
     height: 1px; 
-    width: 100%;   
+    width: calc(100% - 2rem);   
     
     transition: all 0.4s ease-in-out;
+    transition:all .3s ease;
+    transform-origin: center center;
+    margin: auto;
   }
+  &:hover,&.active{
+    background: $m !important;
+    border-radius: 50px;
+    span{
+      width: calc(100% - 2rem);  
+    }
+    span{
+      background: $w !important;
+    }
+  }
+  
 }
 
 #sp_menu span:nth-of-type(1) {
@@ -181,4 +196,101 @@ transform-origin: left top; /*左から右に向かう*/
 }
 #sp_menu.active span:nth-of-type(2) {
   transform: translateY(-0.5rem) rotate(25deg);
+}
+
+#overlay_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+    z-index: 4000;
+    
+    // Initial state handled by GSAP
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    visibility: hidden;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    #top_entry_btns{
+      margin: 2rem 0;
+      position: static;
+      a{
+        background: $m;
+        color: $w;
+        text-align: left;
+        padding: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        transition:all .3s ease;
+        .icon{
+          border-left: 1px solid $w;
+          svg{
+            line-height: 1;
+            vertical-align: middle;
+            display: inline-block;
+            margin: -0.1rem 0 0 1rem;
+            transition:all .3s ease;
+          }
+        }
+        &::before{
+          display: none;
+        }
+        &:hover{
+          background: #023C77;
+          .icon{
+            svg{
+transform: translateX(4px);
+            }
+            
+          }
+        }
+      }
+    }
+    .footer_inner {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 2rem;
+        color: #000;
+        padding: 0 5vw;
+        .left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        a{
+          &::before{
+            background: #000;
+          }
+        }
+        .right{
+          .title{
+            border-bottom: 1px dotted $m;
+            font-weight: 500;
+            padding: 0 0 0.1rem 0;
+          }
+        }
+    }
+
+    .sns_inner{
+      margin: auto 0 3rem 0;
+      width: 100%;
+      padding: 0;
+      a:hover{
+        &::before{
+          display: none;
+        }
+      }
+    }
+   
+}
+
+header {
+    #sp_menu {
+        z-index: 5001;
+    }
 }
