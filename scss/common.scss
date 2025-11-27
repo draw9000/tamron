@@ -104,6 +104,24 @@ background: $w;
 }
 }
 
+ a{
+          &:hover{
+            span.c-icon{
+              &.befores{
+                  animation-name: transformRightLeft;
+                  
+              }
+              &.afters{
+                 animation-name: transformLeftRight; /* 修正: hover時のアニメーションを指定 */
+animation-delay: 0.2s; 
+color: $m;
+
+
+              }
+          }
+          }
+        }
+
 @keyframes transformLeftRight {
   0% {
     transform: translateX(-100%);

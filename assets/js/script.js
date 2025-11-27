@@ -5,48 +5,7 @@ const _ua = {};
 _ua.Mobile = /iPhone|iPod|Android|Windows Phone|BlackBerry|iPad/i.test(navigator.userAgent);
 _ua.Tablet = /iPad/i.test(navigator.userAgent) && !/iPhone|iPod/i.test(navigator.userAgent);
 
-if (typeof SplitText === "undefined") {
-  class SimpleSplitText {
-    constructor(selector, options = {}) {
-      this.targets = Array.from(document.querySelectorAll(selector));
-      this.lines = [];
-      this.originalHTML = new Map();
-      this.options = options;
-      this._splitIntoLines();
-    }
 
-    _splitIntoLines() {
-      this.targets.forEach((target) => {
-        this.originalHTML.set(target, target.innerHTML);
-        const segments = target.innerHTML.split(/<br\s*\/?>/gi);
-        target.innerHTML = "";
-
-        segments.forEach((segment, index) => {
-          const span = document.createElement("span");
-          span.className = "split-line-fallback";
-          span.innerHTML = segment;
-          target.appendChild(span);
-          this.lines.push(span);
-          if (index < segments.length - 1) {
-            target.appendChild(document.createElement("br"));
-          }
-        });
-      });
-    }
-
-    revert() {
-      this.targets.forEach((target) => {
-        const html = this.originalHTML.get(target);
-        if (html !== undefined) {
-          target.innerHTML = html;
-        }
-      });
-      this.lines = [];
-    }
-  }
-
-  window.SplitText = SimpleSplitText;
-}
 
 
 const lenis = new Lenis();
@@ -57,18 +16,18 @@ const raf = (time) => {
 requestAnimationFrame(raf);
 
 function setRootFontSize() {
-	const html = document.documentElement;
-	const vw = window.innerWidth;
-	html.style.setProperty('--viewPortWidth', `${vw}px`);
+  const html = document.documentElement;
+  const vw = window.innerWidth;
+  html.style.setProperty('--viewPortWidth', `${vw}px`);
 
-	if (vw < 768) {
-		html.style.removeProperty('font-size');
-		return;
-	}
+  if (vw < 768) {
+    html.style.removeProperty('font-size');
+    return;
+  }
 
-	// 例: 1440pxを基準に100%（16px）としたい場合
-	const base = 1440;
-	html.style.fontSize = (vw / base * 100) + '%';
+  // 例: 1440pxを基準に100%（16px）としたい場合
+  const base = 1440;
+  html.style.fontSize = (vw / base * 100) + '%';
 }
 
 const updateSlideshowVars = () => {
@@ -110,9 +69,7 @@ const handleAnchorScroll = (href) => {
   }, speed, "swing");
 };
 
-const syncScrollEvents = () => {
-  handleScrollState();
-};
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // GSAPと関連プラグインが読み込まれるのを待つ
@@ -123,24 +80,26 @@ document.addEventListener('DOMContentLoaded', () => {
       introAnimation();
     }
   }, 100);
-  
-  
+
+
 });
 
 
 
 function introAnimation() {
   let splits = new SplitText("p.encopy", { type: "lines" });
-  
+
 
   const tl = gsap.timeline();
-  
+
   tl.fromTo(".image-mask", {
-    opacity:0,
-    scale:0.8,
-  }, { duration: 2,delay:1,scale:1,opacity:1, ease: "expo.out",onComplete:function(){
-    $(".image-mask").addClass("active")
-  }});
+    opacity: 0,
+    scale: 0.8,
+  }, {
+    duration: 2, delay: 1, scale: 1, opacity: 1, ease: "expo.out", onComplete: function () {
+      $(".image-mask").addClass("active")
+    }
+  });
 
   tl.from(splits.lines, {
     duration: 1.5,
@@ -151,13 +110,15 @@ function introAnimation() {
   }, "-=1");
 
   tl.fromTo(".jpcopy p", {
-    opacity:0,
-    y:-20,
-  }, { duration: 2,y:0, opacity:1, stagger: {
-    each: 0.2,
-    from: "end"
-  }, ease: "expo.out"}
-, "-=1"
+    opacity: 0,
+    y: -20,
+  }, {
+    duration: 2, y: 0, opacity: 1, stagger: {
+      each: 0.2,
+      from: "end"
+    }, ease: "expo.out"
+  }
+    , "-=1"
   );
 
   tl.to(splits.lines, {
@@ -193,7 +154,7 @@ function initializeTopMessageAnimation() {
       });
     };
 
-      const createConceptTrigger = () => {
+    const createConceptTrigger = () => {
       if (conceptTrigger) {
         conceptTrigger.kill();
       }
@@ -208,9 +169,9 @@ function initializeTopMessageAnimation() {
             txtiliner();
             linesInitialized = true;
           }
-          }
+        }
       });
-      };
+    };
 
     // 初期化（#concept表示時にアニメーション開始）
     createConceptTrigger();
@@ -231,9 +192,9 @@ function initializeTopMessageAnimation() {
 }
 
 
-$(function(){
+$(function () {
 
-  $('#recruit_header').load('/header.html?v=2', function(){
+  $('#recruit_header').load('/header.html?v=2', function () {
     handleDrawer(".draw01", ".drawer01");
     handleDrawer(".draw02", ".drawer02");
     handleDrawer(".draw03", ".drawer03");
@@ -246,43 +207,38 @@ $(function(){
       });
     }
   });
-  $('#recruit_footer').load('/footer.html', function(){
+  $('#recruit_footer').load('/footer.html', function () {
 
     lenis.on('scroll', handleScrollState);
     $(window).on('scroll', handleScrollState);
     handleScrollState();
   });
-  
+
   $(document).on('click', 'a[href^="#"]', function () {
-    if($(this).hasClass('no-scroll')) return;
+    if ($(this).hasClass('no-scroll')) return;
     handleAnchorScroll($(this).attr("href"));
     return false;
-  });    
+  });
 
   let modesp = false;
-  $(window).on('resize', function(){
-    if(modesp == true && $(window).width() > 768){
+  const handleModeSp = () => {
+    if (modesp == true && $(window).width() > 768) {
       modesp = false;
       $('body').removeClass('type-sp');
       $('#slide-menu .slide-menu-nav-layout h3').removeClass('active');
       $('#slide-menu .slide-menu-nav-layout ul').removeAttr('style');
-    }else if(modesp == false && $(window).width() <= 768){
+    } else if (modesp == false && $(window).width() <= 768) {
       modesp = true;
       $('body').addClass('type-sp');
     }
-  });
+  };
 
-  if(modesp == true && $(window).width() > 768){
-    modesp = false;
-    $('body').removeClass('type-sp');
-  }else if(modesp == false && $(window).width() <= 768){
-    modesp = true;
-    $('body').addClass('type-sp');
-  }
+  $(window).on('resize', handleModeSp);
+  handleModeSp();
 
-  if(location.hash){
+  if (location.hash) {
     var target = $(location.hash);
-    if(target.length){
+    if (target.length) {
       let offset = $('body').hasClass('type-sp') ? 100 : 140;
       var position = target.offset().top - offset;
       $("html, body").animate({
@@ -291,83 +247,81 @@ $(function(){
     }
   }
 
-  $(document).on('click', '#sp-mm .sp-mm-btn', function(){
+  $(document).on('click', '#sp-mm .sp-mm-btn', function () {
     $('#slide-menu').stop().slideDown(200);
   });
-  $(document).on('click', '#sp-mm-close', function(){
+  $(document).on('click', '#sp-mm-close', function () {
     $('#slide-menu').stop().slideUp(0);
     $('#slide-menu .slide-menu-nav-layout h3').removeClass('active');
     $('#slide-menu .slide-menu-nav-layout ul').removeAttr('style');
   });
-  $(document).on('click', '#slide-menu .tab-menu li div', function(){
+  $(document).on('click', '#slide-menu .tab-menu li div', function () {
     let tab = $(this).data('tab');
     $('#slide-menu .tab-menu li div').removeClass('active');
     $(this).addClass('active');
     $('#slide-menu .mark').removeClass('active');
-    $('#slide-menu .mark.'+tab).addClass('active');
+    $('#slide-menu .mark.' + tab).addClass('active');
     $('#slide-menu .slide-menu-nav-layout li').removeClass('none');
-    if(tab == 'new'){
+    if (tab == 'new') {
       $('#slide-menu .slide-menu-nav-layout li.career').addClass('none');
-    }else
-    if(tab == 'career'){
-      $('#slide-menu .slide-menu-nav-layout li.new').addClass('none');
-    }
+    } else
+      if (tab == 'career') {
+        $('#slide-menu .slide-menu-nav-layout li.new').addClass('none');
+      }
   });
 
-  $(document).on('click', '#slide-menu .slide-menu-nav-layout h3', function(){
-    if($('body').hasClass('type-sp')){
+  $(document).on('click', '#slide-menu .slide-menu-nav-layout h3', function () {
+    if ($('body').hasClass('type-sp')) {
       $(this).toggleClass('active').next().stop().slideToggle(200);
     }
   });
 
-  $(document).ready(function() {
-    function checkInView() {
-        var offset = 80;
-        var scrollTop = $(window).scrollTop();
-        var windowHeight = $(window).height();
-  
-        $('.inview').each(function() {
-            var elementTop = $(this).offset().top;
-            var elementBottom = elementTop + $(this).outerHeight();
-  
-            if ((elementBottom >= scrollTop + offset) && (elementTop <= scrollTop + windowHeight - offset)) {
-                $(this).addClass('active');
-            }
-        });
-    }
-  
-    lenis.on('scroll', checkInView);
-    $(window).on('scroll', checkInView);
-  
-    checkInView();
-  });
+  function checkInView() {
+    var offset = 80;
+    var scrollTop = $(window).scrollTop();
+    var windowHeight = $(window).height();
+
+    $('.inview').each(function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      if ((elementBottom >= scrollTop + offset) && (elementTop <= scrollTop + windowHeight - offset)) {
+        $(this).addClass('active');
+      }
+    });
+  }
+
+  lenis.on('scroll', checkInView);
+  $(window).on('scroll', checkInView);
+
+  checkInView();
 
 });
 
-$(document).on("click", ".smenu .block .titles", function(){
-  if($(window).width() < 768){
-   $(this).next("ul").slideToggle();
-   $(this).next(".submenus").slideToggle();
-   $(this).toggleClass("active");
- };
+$(document).on("click", ".smenu .block .titles", function () {
+  if ($(window).width() < 768) {
+    $(this).next("ul").slideToggle();
+    $(this).next(".submenus").slideToggle();
+    $(this).toggleClass("active");
+  };
 });
 
 
 function handleDrawer(drawClass, drawerClass) {
   const $drawer = $(drawerClass);
   const $draw = $(drawClass);
-  
-  $draw.on("mouseenter", function() {
+
+  $draw.on("mouseenter", function () {
     $("#pc_gnav ul li a").removeClass("active");
     $(this).find("a").addClass("active");
     $(".mainoverlay").addClass("is-open");
     $(".drawer_menu").removeClass("is-open");
     $drawer.addClass("is-open");
     $(".header-layout-main").addClass("active");
-    
+
   });
 
-  $drawer.on("mouseleave", function() {
+  $drawer.on("mouseleave", function () {
     $("#pc_gnav ul li a").removeClass("active");
     $draw.find("a").removeClass("active");
     $(".mainoverlay").removeClass("is-open");
