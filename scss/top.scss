@@ -10,21 +10,49 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  overflow: hidden;
+  .image-mask{
+    &.active{
+      .inmask{
+        opacity: 0;
+      }
+    }
+    &.fixed{
+      position: fixed;
+      top:0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
   .image {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 55%;
+    left: 50%;
     width: 100vw;
-    height: calc(100vh + 400px);
-    clip-path: inset(35% 35% 35% 35%);
+    height: 100vh;
+    clip-path: inset(0);
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .inmask{
+      display: block; position: absolute; width: 100%; height: 100%; top:0; left:0; content:""; z-index:5;
+      background: rgba($m,0.3);
+      mix-blend-mode: overlay;
+      transition:all .3s ease;
+    }
+    .video-wrapper {
+      position: absolute;
+      inset: 0;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      object-position: center center;
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+      }
     }
   }
 }
@@ -40,6 +68,19 @@
         font-size: 12vw;
         color: $w;
         line-height: 1;
+        font-weight: 500;
+        div{
+          background: linear-gradient(
+            to right,
+            rgb(255, 255, 255) 50%,
+            rgb(0, 0, 0) 50%
+          );
+          background-size: 200% 100%;
+          background-position-x: 100%;
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+              }
         &.en01{
             top:25%;
             right: 15%;
@@ -73,33 +114,217 @@
 
   #concept {
     position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+ 
+    width: 100%;
     min-height: 800px;
+    height: 100vh;
+
   z-index: 10;
   .overlays{
-    display: block; position: absolute; width: 100%; height: 100%; top:0; left:0; content:""; z-index:3;
-    background: rgba(#000,0.6);
+    display: block; position: absolute; width: 100%; height: 120%; top:0; left:0; content:""; z-index:3;
+    background: rgba(#04031c,0.75);
   }
 
 
   .in {
-    width: min(90vw, 960px);
+    
     font-size: 1.3rem;
     font-size: clamp(1rem,2vw,1.3rem);
     color: #fff;
     position: absolute;
     z-index: 100;
+    font-feature-settings: "palt";
+    padding-bottom: 10rem;
+    top:50%;left:50%;transform:translateX(-50%) translateY(-50%);
     p{
         margin: 0 0 1rem 0;
+        line-height: 1.6;
+        div{
+          background: linear-gradient(
+            to right,
+            rgb(255, 255, 255) 50%,
+            rgb(84, 84, 84) 50%
+          );
+          background-size: 200% 100%;
+          background-position-x: 100%;
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+              }
     }
   }
 }
 
 
 #contents{
-    min-height: 200vh;
-    background: #F1F1F1;
+    
+     background: rgba(#000,0.5);
+
+    .contents_inner{
+      padding: 8vw clamp(2rem, 4vw, 4rem);
+      display: grid;
+      grid-template-columns: minmax(10rem, 15rem) minmax(0, 1fr);
+      gap: clamp(2rem, 3vw, 3.5rem);
+      align-items: start;
+    }
+
+    .left{
+      
+      .title{
+        color: $m;
+        margin: 0 0 4rem 0;
+      }
+      .menu{
+        ul{
+          li{
+            a{
+              font-size: 0.875rem;
+              display: block;
+              background: #E6E6E6;
+              padding: 0.5rem;
+              border-radius: 5px;
+              &:hover,&.active{
+                background: $w;
+              }
+              
+            }
+          }
+        }
+      }
+    }
+
+    .menu{
+      ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
+
+    .right{
+      
+      .title{
+        margin: 0 0 3.5rem 0;
+        font-size: 1.2rem;
+        color: $m;
+      }
+      
+      .contents_banner{
+        a{
+          &:hover{
+            span.c-icon{
+              &.befores{
+                  animation-name: transformRightLeft;
+                  
+              }
+              &.afters{
+                 animation-name: transformLeftRight; /* 修正: hover時のアニメーションを指定 */
+animation-delay: 0.2s; 
+color: $m;
+
+
+              }
+          }
+          }
+          .txt{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+          }
+        }
+      }
+    }
+
+    .contents_banner{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: clamp(1rem, 2.8vw, 3rem);
+    }
+
+    .contents_banner a{
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .contents_banner .image{
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+
+    .contents_banner img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .title{
+      margin: 0 0 2rem 0;
+    }
+}
+
+
+#pickup{
+ 
+  background: $m;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: calc(var(--window-height) - var(--slideshowheight) / 2);
+  .enttile{
+    color: $w;
+    text-align: right;
+    position: fixed;
+    left: 80vw;
+    top:0rem;
+    display: block;
+    z-index: 3;
+  }
+  .inner{
+    padding:0 5vw;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    .slideshow{
+      display: flex;
+      
+      width: 300%;
+      position: relative;
+     
+    }
+    a.block{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100vw;
+
+      .images{
+        width: 44%;
+      }
+      .txt{
+        flex:1;
+        color: $w;
+        padding: 0 8vw;
+        h3{
+          font-size: 1.4rem;
+        }
+        .lead{
+          margin: 0 0 1rem 0;
+        }
+        .arrow{
+          margin: 0 0 0 auto;
+          background: $w;
+          span.c-icon{
+            background: $m;
+          }
+        }
+      }
+    }
+  }
 }

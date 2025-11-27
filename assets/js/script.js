@@ -1,5 +1,54 @@
 import Lenis from 'https://cdn.jsdelivr.net/npm/@studio-freight/lenis/+esm';
 
+
+const _ua = {};
+_ua.Mobile = /iPhone|iPod|Android|Windows Phone|BlackBerry|iPad/i.test(navigator.userAgent);
+_ua.Tablet = /iPad/i.test(navigator.userAgent) && !/iPhone|iPod/i.test(navigator.userAgent);
+
+if (typeof SplitText === "undefined") {
+  class SimpleSplitText {
+    constructor(selector, options = {}) {
+      this.targets = Array.from(document.querySelectorAll(selector));
+      this.lines = [];
+      this.originalHTML = new Map();
+      this.options = options;
+      this._splitIntoLines();
+    }
+
+    _splitIntoLines() {
+      this.targets.forEach((target) => {
+        this.originalHTML.set(target, target.innerHTML);
+        const segments = target.innerHTML.split(/<br\s*\/?>/gi);
+        target.innerHTML = "";
+
+        segments.forEach((segment, index) => {
+          const span = document.createElement("span");
+          span.className = "split-line-fallback";
+          span.innerHTML = segment;
+          target.appendChild(span);
+          this.lines.push(span);
+          if (index < segments.length - 1) {
+            target.appendChild(document.createElement("br"));
+          }
+        });
+      });
+    }
+
+    revert() {
+      this.targets.forEach((target) => {
+        const html = this.originalHTML.get(target);
+        if (html !== undefined) {
+          target.innerHTML = html;
+        }
+      });
+      this.lines = [];
+    }
+  }
+
+  window.SplitText = SimpleSplitText;
+}
+
+
 const lenis = new Lenis();
 const raf = (time) => {
   lenis.raf(time);
@@ -7,31 +56,43 @@ const raf = (time) => {
 };
 requestAnimationFrame(raf);
 
-const setRootFontSize = () => {
-  const MIN_WIDTH = 320;
-  const MAX_WIDTH = 1600;
-  const MIN_FONT_SIZE = 14;
-  const MAX_FONT_SIZE = 18;
+function setRootFontSize() {
+	const html = document.documentElement;
+	const vw = window.innerWidth;
+	html.style.setProperty('--viewPortWidth', `${vw}px`);
 
-  const width = Math.min(Math.max(window.innerWidth, MIN_WIDTH), MAX_WIDTH);
-  const ratio = (width - MIN_WIDTH) / (MAX_WIDTH - MIN_WIDTH);
-  const fontSize = MIN_FONT_SIZE + (MAX_FONT_SIZE - MIN_FONT_SIZE) * ratio;
+	if (vw < 768) {
+		html.style.removeProperty('font-size');
+		return;
+	}
 
-  document.documentElement.style.fontSize = `${fontSize}px`;
+	// 例: 1440pxを基準に100%（16px）としたい場合
+	const base = 1440;
+	html.style.fontSize = (vw / base * 100) + '%';
+}
+
+const updateSlideshowVars = () => {
+  const html = document.documentElement;
+  const slideshow = document.querySelector(".slideshow");
+  const slideshowHeight = slideshow?.getBoundingClientRect().height ?? 0;
+  const windowHeight = window.innerHeight;
+  html.style.setProperty('--window-height', `${windowHeight}px`);
+  html.style.setProperty('--slideshowheight', `${slideshowHeight}px`);
+  const startOffset = windowHeight / 4;
+  html.style.setProperty("--slideshow-start-offset", `${startOffset}px`);
 };
 
-let rootFontResizeTimer;
-const handleRootFontResize = () => {
-  clearTimeout(rootFontResizeTimer);
-  rootFontResizeTimer = setTimeout(setRootFontSize, 80);
+const handleResizeVars = () => {
+  setRootFontSize();
+  updateSlideshowVars();
 };
 
-setRootFontSize();
-window.addEventListener('resize', handleRootFontResize);
-window.addEventListener('orientationchange', setRootFontSize);
+updateSlideshowVars();
+window.addEventListener('resize', handleResizeVars);
+
 
 const handleScrollState = () => {
-  if ($(window).scrollTop() > 300) {
+  if ($(window).scrollTop() > 10) {
     $('#pagetop').fadeIn();
     $('body').addClass('scroll-in');
   } else {
@@ -53,6 +114,123 @@ const syncScrollEvents = () => {
   handleScrollState();
 };
 
+document.addEventListener('DOMContentLoaded', () => {
+  // GSAPと関連プラグインが読み込まれるのを待つ
+  const checkGSAP = setInterval(() => {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && typeof SplitText !== 'undefined') {
+      clearInterval(checkGSAP);
+      initializeTopMessageAnimation();
+      introAnimation();
+    }
+  }, 100);
+  
+  
+});
+
+
+
+function introAnimation() {
+  let splits = new SplitText("p.encopy", { type: "lines" });
+  
+
+  const tl = gsap.timeline();
+  
+  tl.fromTo(".image-mask", {
+    opacity:0,
+    scale:0.8,
+  }, { duration: 2,delay:1,scale:1,opacity:1, ease: "expo.out",onComplete:function(){
+    $(".image-mask").addClass("active")
+  }});
+
+  tl.from(splits.lines, {
+    duration: 1.5,
+    stagger: 0.25,
+    x: -110,
+    opacity: 0,
+    ease: "power2.out"
+  }, "-=1");
+
+  tl.fromTo(".jpcopy p", {
+    opacity:0,
+    y:-20,
+  }, { duration: 2,y:0, opacity:1, stagger: {
+    each: 0.2,
+    from: "end"
+  }, ease: "expo.out"}
+, "-=1"
+  );
+
+  tl.to(splits.lines, {
+    duration: 2,
+    stagger: 0.2,
+    backgroundPositionX: 0,
+    ease: "expo.out"
+  }, "-=2"); // 前のアニメーションの直後
+}
+
+function initializeTopMessageAnimation() {
+  if (!_ua.Mobile) { // PCの場合のみ実行
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+    let split = new SplitText("#concept .in p", { type: "lines" });
+
+    let conceptTrigger;
+    let linesInitialized = false;
+
+    const txtiliner = () => {
+      split.lines.forEach((target) => {
+        gsap.to(target, {
+          backgroundPositionX: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: target,
+            markers: false,
+            pinSpacing: true,
+            scrub: 1.5,
+            start: () => `top+=${window.innerHeight + 50}px`, // ウィンドウ高さを使って開始位置調整
+            end: "bottom bottom"
+          }
+        });
+      });
+    };
+
+    const createConceptTrigger = () => {
+      if (conceptTrigger) {
+        conceptTrigger.kill();
+      }
+
+      linesInitialized = false;
+      conceptTrigger = ScrollTrigger.create({
+        trigger: "#concept",
+        start: "top bottom",
+        once: true,
+        onEnter: () => {
+          if (!linesInitialized) {
+            txtiliner();
+            linesInitialized = true;
+          }
+        }
+      });
+    };
+
+    // 初期化（#concept表示時にアニメーション開始）
+    createConceptTrigger();
+
+    // リサイズ時の再初期化
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        //ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        split.revert(); // SplitTextをいったん戻す
+        split = new SplitText("#concept .in p", { type: "lines" }); // 再生成
+        createConceptTrigger();
+        ScrollTrigger.refresh(); // ScrollTriggerをリフレッシュ
+      }, 250);
+    });
+  }
+}
+
+
 $(function(){
 
   $('#recruit_header').load('/header.html?v=2', function(){
@@ -61,6 +239,12 @@ $(function(){
     handleDrawer(".draw03", ".drawer03");
     handleDrawer(".draw04", ".drawer04");
     handleDrawer(".draw05", ".drawer05");
+    const spMenuButton = document.getElementById("sp_menu");
+    if (spMenuButton) {
+      spMenuButton.addEventListener("click", () => {
+        spMenuButton.classList.toggle("active");
+      });
+    }
   });
   $('#recruit_footer').load('/footer.html', function(){
 
