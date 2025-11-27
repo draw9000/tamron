@@ -48,15 +48,15 @@ main{
   display: block;
 }
 
-.hi .image {
+.hi .image,.hi .images {
   overflow: hidden !important;
   line-height: 1;
 }
-.hi .image img {
+.hi .image img,.hi .images img {
   transition: all 0.5s ease;
   will-change: transform;
 }
-.hi:hover .image img {
+.hi:hover .image img,.hi:hover .images img {
   transform: scale(1.05);
 }
 

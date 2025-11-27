@@ -55,6 +55,12 @@ body.scroll-in{
       a{
         background: $m;
         color: $w;
+        
+        &:hover{
+      background: #000;
+      color: $w;
+      
+    }
       }
     }
     #sp_menu{
@@ -146,6 +152,11 @@ transform-origin: left top; /*左から右に向かう*/
     color: $m;
     padding: 0.5rem 1rem;
     border-radius: 3px;
+    transition:all .3s ease;
+    &:hover{
+      background: $m;
+      color: $w;
+    }
   }
 }
 

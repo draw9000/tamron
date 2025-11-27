@@ -213,7 +213,7 @@ Focus Your Talent.<br>
           </div>
           <div class="horizontal__list">
             
-            <a class="block horizontal__item">
+            <a href="" class="block horizontal__item hi">
               <div class="images">
                 <img src="/assets/image/top/atfirst01.jpg" alt="">
               </div>
@@ -228,7 +228,7 @@ Focus Your Talent.<br>
                 <div class="arrow"><span class="c-icon afters"></span><span class="c-icon befores"></span></div>
               </div>
             </a>
-            <a class="block horizontal__item">
+            <a href="" class="block horizontal__item hi">
               <div class="images">
                 <img src="/assets/image/top/atfirst01.jpg" alt="">
               </div>
@@ -243,7 +243,7 @@ Focus Your Talent.<br>
                 <div class="arrow"><span class="c-icon afters"></span><span class="c-icon befores"></span></div>
               </div>
             </a>
-            <a class="block horizontal__item">
+            <a href="" class="block horizontal__item hi">
               <div class="images">
                 <img src="/assets/image/top/atfirst01.jpg" alt="">
               </div>
@@ -265,66 +265,6 @@ Focus Your Talent.<br>
     </section>
     </div>
 
-<!--
-    <section id="pickup">
-      
-      <div class="inner">
-        
-        <div class="slideshow">
-          <div class="enttile"><p class="en">_PICK UP</p></div>
-          <div class="slideshow_inner">
-          <a class="block">
-            <div class="images">
-              <img src="/assets/image/top/atfirst01.jpg" alt="">
-            </div>
-            <div class="txt">
-              <div class="slide_header">
-                <p class="en">AT FIRST</p>
-                <h3>3分で分かるタムロン</h3>
-              </div>
-              <div class="lead">
-                <p>カメラレンズをはじめ、タムロンが挑むものづくりの世界をぎゅっと凝縮。会社の魅力を3分でサクッと知れる、最初に読んでほしいコンテンツです。</p>
-              </div>
-              <div class="arrow"><span class="c-icon afters"></span><span class="c-icon befores"></span></div>
-            </div>
-          </a>
-          <a class="block">
-            <div class="images">
-              <img src="/assets/image/top/atfirst02.jpg" alt="">
-            </div>
-            <div class="txt">
-              <div class="slide_header">
-                <p class="en">AT FIRST</p>
-                <h3>3分で分かるタムロン</h3>
-              </div>
-              <div class="lead">
-                <p>カメラレンズをはじめ、タムロンが挑むものづくりの世界をぎゅっと凝縮。会社の魅力を3分でサクッと知れる、最初に読んでほしいコンテンツです。</p>
-              </div>
-              <div class="arrow"><span class="c-icon afters"></span><span class="c-icon befores"></span></div>
-            </div>
-          </a>
-          <a class="block">
-            <div class="images">
-              <img src="/assets/image/top/atfirst03.jpg" alt="">
-            </div>
-            <div class="txt">
-              <div class="slide_header">
-                <p class="en">AT FIRST</p>
-                <h3>3分で分かるタムロン</h3>
-              </div>
-              <div class="lead">
-                <p>カメラレンズをはじめ、タムロンが挑むものづくりの世界をぎゅっと凝縮。会社の魅力を3分でサクッと知れる、最初に読んでほしいコンテンツです。</p>
-              </div>
-              <div class="arrow"><span class="c-icon afters"></span><span class="c-icon befores"></span></div>
-            </div>
-          </a>
-        </div>
-          
-        </div>
-
-      </div>
-    </section>
-  -->
 
 
 
@@ -578,7 +518,16 @@ gsap.to(sections, {
     markers: false,
     start: () => `top,top-=${headerHeight}`,
     end: () => "+=" + window.innerWidth * 3.5,
-    invalidateOnRefresh: true } });
+    invalidateOnRefresh: true,
+    onEnter: () => {
+      document.querySelector("#copy")?.classList.add("animation_off");
+      document.querySelector("#concept")?.classList.add("animation_off");
+    },
+    onLeaveBack: () => {
+      document.querySelector("#copy")?.classList.remove("animation_off");
+      document.querySelector("#concept")?.classList.remove("animation_off");
+    }
+  } });
 
 
 
