@@ -77,7 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && typeof SplitText !== 'undefined') {
       clearInterval(checkGSAP);
       initializeTopMessageAnimation();
-      introAnimation();
+      initializeTopMessageAnimation();
+      // introAnimation(); // Loading完了後に実行するためコメントアウト
     }
   }, 100);
 
@@ -86,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-function introAnimation() {
+window.introAnimation = function introAnimation() {
   let splits = new SplitText("p.encopy", { type: "lines" });
 
 
@@ -126,7 +127,27 @@ function introAnimation() {
     stagger: 0.2,
     backgroundPositionX: 0,
     ease: "expo.out"
-  }, "-=2"); // 前のアニメーションの直後
+  }, "-=2");
+
+  tl.fromTo("#recruit_header", {
+    opacity: 0,
+    y: -20,
+  }, {
+    duration: 1.5,
+    opacity: 1,
+    y: 0,
+    ease: "power3.out"
+  }, "-=2");
+
+  tl.fromTo("#top_entry_btns", {
+    opacity: 0,
+    y: 20,
+  }, {
+    duration: 1.5,
+    opacity: 1,
+    y: 0,
+    ease: "power3.out"
+  }, "-=2");
 }
 
 function initializeTopMessageAnimation() {

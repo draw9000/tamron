@@ -1,5 +1,42 @@
 @use 'temp/mixin' as *;
 
+
+
+#loading{
+  position: fixed;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background: $w;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .grey{
+    display: flex;
+    filter: grayscale(100%);
+    position: absolute;
+    top:50%;left:50%;transform:translateX(-50%) translateY(-50%);
+    opacity: 0.5;
+  }
+  .blue{
+    display: flex;
+    position: absolute;
+    top:50%;left:50%;transform:translateX(-50%) translateY(-50%);
+    clip-path: inset(0 100% 0 0);
+  }
+  
+  .image{
+    width: 10rem;
+  }
+  .txt{
+    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 0 2rem;
+    color: $m;
+  }
+}
  .image-mask#videos{
   background: url("/assets/image/top/kv_bg.png") no-repeat 0 0;background-size: cover;
   position: relative;
@@ -101,6 +138,7 @@
     bottom: 2rem;
     right: 2rem;
     z-index: 3000;
+    opacity: 0;
     ul{
       li{
         margin: 0 0 0.3rem 0;
@@ -124,8 +162,6 @@
   }
 
 #kv {
-
-  
   position: relative;
   display: flex;
   align-items: center;
@@ -275,40 +311,6 @@
   z-index: 999;
  
 
-    .contents_inner{
-      padding: 8vw clamp(2rem, 4vw, 4rem);
-      display: grid;
-      grid-template-columns: minmax(10rem, 15rem) minmax(0, 1fr);
-      gap: clamp(2rem, 3vw, 3.5rem);
-      align-items: start;
-    }
-
-    .left{
-      
-      .title{
-        color: $m;
-        margin: 0 0 4rem 0;
-      }
-      .menu{
-        ul{
-          li{
-            a{
-              font-size: 0.875rem;
-              display: block;
-              background: #E6E6E6;
-              padding: 0.5rem;
-              border-radius: 5px;
-              &:hover,&.active{
-                background: $w;
-              }
-              
-            }
-          }
-        }
-      }
-    }
-
-    .menu{
       ul{
         list-style: none;
         margin: 0;

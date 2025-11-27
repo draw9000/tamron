@@ -18,12 +18,57 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="stylesheet" href="/assets/css/common.css?v=1">
   <link rel="stylesheet" href="/assets/css/top.css?v=1">
+  <style>
+    #contents .contents_banner {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: clamp(1rem, 2.8vw, 3rem) !important;
+    }
+    #contents .contents_banner a {
+      width: calc(33.333% - clamp(1rem, 2.8vw, 3rem) * 2 / 3) !important;
+      flex: 0 0 calc(33.333% - clamp(1rem, 2.8vw, 3rem) * 2 / 3) !important;
+      max-width: none !important;
+    }
+    @media (max-width: 768px) {
+      #contents .contents_banner a {
+        width: calc(50% - clamp(1rem, 2.8vw, 3rem) / 2) !important;
+        flex: 0 0 calc(50% - clamp(1rem, 2.8vw, 3rem) / 2) !important;
+      }
+    }
+    @media (max-width: 480px) {
+      #contents .contents_banner a {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header id="recruit_header"></header>
+  
+  <div id="loading">
+    <div class="grey">
+      <div class="image">
+      <img src="/assets/image/common/logo_blue.svg" alt="">
+    </div>
+    <div class="txt">
+      <p class="en">RECRUIT<br>SITE</p>
+    </div>
+    </div>
 
-  <main>
+    <div class="blue">
+      <div class="image">
+      <img src="/assets/image/common/logo_blue.svg" alt="">
+    </div>
+    <div class="txt">
+      <p class="en">RECRUIT<br>SITE</p>
+    </div>
+    </div>
+    
+  </div>
+
+  <main style="opacity: 0;">
 
     <div id="vwrap">
     <div class="image-mask" id="videos">
@@ -112,12 +157,12 @@ Focus Your Talent.<br>
           </div>
             <div class="menu">
               <ul>
-                <li><a href="">＃初めての方へ</a></li>
-                <li><a href="">＃カメラレンズ</a></li>
-                <li><a href="">＃医療を支える</a></li>
-                <li><a href="">＃社会インフラを支える</a></li>
-                <li><a href="">＃宇宙への挑戦</a></li>
-                <li><a href="">＃タムロンで働く</a></li>
+                <li><a href="" data-filter="first">＃初めての方へ</a></li>
+                <li><a href="" data-filter="lens">＃カメラレンズ</a></li>
+                <li><a href="" data-filter="medical">＃医療を支える</a></li>
+                <li><a href="" data-filter="infra">＃社会インフラを支える</a></li>
+                <li><a href="" data-filter="space">＃宇宙への挑戦</a></li>
+                <li><a href="" data-filter="work">＃タムロンで働く</a></li>
               </ul>
             </div>
           
@@ -127,7 +172,7 @@ Focus Your Talent.<br>
             <p class="en">_CONTENTS</p>
           </div>
             <div class="contents_banner">
-              <a href="" class="hi">
+              <a href="" class="hi" data-category="first">
                 <div class="image">
                   <img src="/assets/image/top/thumb01.jpg" alt="">
                 </div>
@@ -141,7 +186,7 @@ Focus Your Talent.<br>
                   </div>
                 </div>
               </a>
-              <a href="" class="hi">
+              <a href="" class="hi" data-category="first">
                 <div class="image">
                   <img src="/assets/image/top/thumb02.jpg" alt="">
                 </div>
@@ -155,7 +200,7 @@ Focus Your Talent.<br>
                   </div>
                 </div>
               </a>
-              <a href="" class="hi">
+              <a href="" class="hi" data-category="medical">
                 <div class="image">
                   <img src="/assets/image/top/thumb03.jpg" alt="">
                 </div>
@@ -169,7 +214,7 @@ Focus Your Talent.<br>
                   </div>
                 </div>
               </a>
-              <a href="" class="hi">
+              <a href="" class="hi" data-category="infra">
                 <div class="image">
                   <img src="/assets/image/top/thumb04.jpg" alt="">
                 </div>
@@ -183,7 +228,7 @@ Focus Your Talent.<br>
                   </div>
                 </div>
               </a>
-              <a href="" class="hi">
+              <a href="" class="hi" data-category="space">
                 <div class="image">
                   <img src="/assets/image/top/thumb05.jpg" alt="">
                 </div>
@@ -230,12 +275,12 @@ Focus Your Talent.<br>
             </a>
             <a href="" class="block horizontal__item hi">
               <div class="images">
-                <img src="/assets/image/top/atfirst01.jpg" alt="">
+                <img src="/assets/image/top/atfirst02.jpg" alt="">
               </div>
               <div class="txt">
                 <div class="slide_header">
                   <p class="en">AT FIRST</p>
-                  <h3>3分で分かるタムロン</h3>
+                  <h3>未来への挑戦</h3>
                 </div>
                 <div class="lead">
                   <p>カメラレンズをはじめ、タムロンが挑むものづくりの世界をぎゅっと凝縮。会社の魅力を3分でサクッと知れる、最初に読んでほしいコンテンツです。</p>
@@ -245,12 +290,12 @@ Focus Your Talent.<br>
             </a>
             <a href="" class="block horizontal__item hi">
               <div class="images">
-                <img src="/assets/image/top/atfirst01.jpg" alt="">
+                <img src="/assets/image/top/atfirst03.jpg" alt="">
               </div>
               <div class="txt">
                 <div class="slide_header">
                   <p class="en">AT FIRST</p>
-                  <h3>3分で分かるタムロン</h3>
+                  <h3>私がタムロンを選んだワケ</h3>
                 </div>
                 <div class="lead">
                   <p>カメラレンズをはじめ、タムロンが挑むものづくりの世界をぎゅっと凝縮。会社の魅力を3分でサクッと知れる、最初に読んでほしいコンテンツです。</p>
@@ -529,10 +574,63 @@ gsap.to(sections, {
     }
   } });
 
+    const filterButtons = document.querySelectorAll('.menu a[data-filter]');
+    const contentItems = document.querySelectorAll('.contents_banner a.hi');
 
+    filterButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const filterValue = button.getAttribute('data-filter');
+        const bannerContainer = document.querySelector('.contents_banner');
 
+        gsap.to(bannerContainer, {
+          autoAlpha: 0,
+          duration: 0.3,
+          onComplete: () => {
+            contentItems.forEach(item => {
+              const itemCategory = item.getAttribute('data-category');
+              if (filterValue === 'all' || itemCategory === filterValue) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+            ScrollTrigger.refresh();
+            gsap.to(bannerContainer, { autoAlpha: 1, duration: 0.3 });
+          }
+        });
+      });
+    });
 
+    // Loading Animation
+    window.addEventListener('load', () => {
+      const loading = document.querySelector('#loading');
+      const blue = document.querySelector('#loading .blue');
 
+      if (loading && blue) {
+        const tl = gsap.timeline();
+
+        tl.to(blue, {
+          clipPath: 'inset(0 0% 0 0)',
+          duration: 1.5,
+          ease: 'power4.inOut'
+        })
+        .to(loading, {
+          autoAlpha: 0,
+          duration: 0.5,
+          delay: 0.2,
+          onStart: () => {
+             gsap.to("main", { opacity: 1, duration: 0.5, delay: 0.5 });
+          },
+          onComplete: () => {
+            loading.style.display = 'none';
+            if (typeof window.introAnimation === 'function') {
+              window.introAnimation();
+            }
+          }
+        });
+      }
+    });
 
   </script>
 </body>
