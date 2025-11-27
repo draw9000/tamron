@@ -92,7 +92,7 @@ window.addEventListener('resize', handleResizeVars);
 
 
 const handleScrollState = () => {
-  if ($(window).scrollTop() > 10) {
+  if ($(window).scrollTop() > 300) {
     $('#pagetop').fadeIn();
     $('body').addClass('scroll-in');
   } else {
@@ -186,14 +186,14 @@ function initializeTopMessageAnimation() {
             markers: false,
             pinSpacing: true,
             scrub: 1.5,
-            start: () => `top+=${window.innerHeight + 50}px`, // ウィンドウ高さを使って開始位置調整
+            start: "top center", // ウィンドウ高さを使って開始位置調整
             end: "bottom bottom"
           }
         });
       });
     };
 
-    const createConceptTrigger = () => {
+      const createConceptTrigger = () => {
       if (conceptTrigger) {
         conceptTrigger.kill();
       }
@@ -208,9 +208,9 @@ function initializeTopMessageAnimation() {
             txtiliner();
             linesInitialized = true;
           }
-        }
+          }
       });
-    };
+      };
 
     // 初期化（#concept表示時にアニメーション開始）
     createConceptTrigger();
@@ -251,7 +251,6 @@ $(function(){
     lenis.on('scroll', handleScrollState);
     $(window).on('scroll', handleScrollState);
     handleScrollState();
-
   });
   
   $(document).on('click', 'a[href^="#"]', function () {

@@ -25,22 +25,42 @@
 
   <main>
 
-   <div id="kv">
-
-      <div class="image-mask">
-        <div class="image">
-          <div class="inmask"></div>
-          <div class="video-wrapper">
-            <iframe
-              src="https://player.vimeo.com/video/1140414114?h=e98a812ae1&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1"
-              title="タムロン_採用サイトTOP_TEST01"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-            ></iframe>
-          </div>
+    <div id="vwrap">
+    <div class="image-mask" id="videos">
+      <div class="image">
+        <div class="inmask"></div>
+        <div class="video-wrapper">
+          <iframe
+            src="https://player.vimeo.com/video/1140414114?h=e98a812ae1&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1"
+            title="タムロン_採用サイトTOP_TEST01"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
         </div>
       </div>
+      <div id="news">
+        <div class="news_inner">
+          <dl>
+            <dt>2025.11.11</dt>
+            <dd>ダミーインターンシップ情報を更新しました。</dd>
+          </dl>
+        </div>
+      </div>
+      
+    </div>
+
+    <div id="top_entry_btns">
+      <ul>
+        <li><a href="">新卒ENTRY<br>MYPAGE</a></li>
+        <li><a href="">キャリアENTRY</a></li>
+        <li><a href="">障がい者ENTRY</a></li>
+      </ul>
+    </div>
+
+   <div id="kv">
+
+    <div class="overlays"></div>
 
       <div id="copy">
         <p class="encopy en01 en">FOCUS</p>
@@ -49,12 +69,12 @@
         <div class="jpcopy">
           <p class="tatete">毎日を。</p><br>
           <p class="tatete">まっすぐ向き合える</p><br>
-          <p class="tatete">その想いに</p><br>
+          <p class="tatete">その想いに、</p><br>
         </div>
       </div>
 
       <div id="concept">
-        <div class="overlays"></div>
+        
         <div class="in">
         <p>
           選ばされた道じゃなく、自分で選んだ道を。<br>
@@ -78,7 +98,7 @@ Focus Your Talent.<br>
       </div>
 
    
-
+    </div>
 
 
     </div>
@@ -183,13 +203,76 @@ Focus Your Talent.<br>
 
     </div>
 
+    <div class="wrapper">
+    <section class="horizontal">
+      <div class="horizontal__container content-container">
+  
+        <div class="horizontal__scroll">
+          <div class="entitle">
+            <p class="en">_PICK UP</p>
+          </div>
+          <div class="horizontal__list">
+            
+            <a class="block horizontal__item">
+              <div class="images">
+                <img src="/assets/image/top/atfirst01.jpg" alt="">
+              </div>
+              <div class="txt">
+                <div class="slide_header">
+                  <p class="en">AT FIRST</p>
+                  <h3>3分で分かるタムロン</h3>
+                </div>
+                <div class="lead">
+                  <p>カメラレンズをはじめ、タムロンが挑むものづくりの世界をぎゅっと凝縮。会社の魅力を3分でサクッと知れる、最初に読んでほしいコンテンツです。</p>
+                </div>
+                <div class="arrow"><span class="c-icon afters"></span><span class="c-icon befores"></span></div>
+              </div>
+            </a>
+            <a class="block horizontal__item">
+              <div class="images">
+                <img src="/assets/image/top/atfirst01.jpg" alt="">
+              </div>
+              <div class="txt">
+                <div class="slide_header">
+                  <p class="en">AT FIRST</p>
+                  <h3>3分で分かるタムロン</h3>
+                </div>
+                <div class="lead">
+                  <p>カメラレンズをはじめ、タムロンが挑むものづくりの世界をぎゅっと凝縮。会社の魅力を3分でサクッと知れる、最初に読んでほしいコンテンツです。</p>
+                </div>
+                <div class="arrow"><span class="c-icon afters"></span><span class="c-icon befores"></span></div>
+              </div>
+            </a>
+            <a class="block horizontal__item">
+              <div class="images">
+                <img src="/assets/image/top/atfirst01.jpg" alt="">
+              </div>
+              <div class="txt">
+                <div class="slide_header">
+                  <p class="en">AT FIRST</p>
+                  <h3>3分で分かるタムロン</h3>
+                </div>
+                <div class="lead">
+                  <p>カメラレンズをはじめ、タムロンが挑むものづくりの世界をぎゅっと凝縮。会社の魅力を3分でサクッと知れる、最初に読んでほしいコンテンツです。</p>
+                </div>
+                <div class="arrow"><span class="c-icon afters"></span><span class="c-icon befores"></span></div>
+              </div>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+
+<!--
     <section id="pickup">
       
       <div class="inner">
         
         <div class="slideshow">
           <div class="enttile"><p class="en">_PICK UP</p></div>
-
+          <div class="slideshow_inner">
           <a class="block">
             <div class="images">
               <img src="/assets/image/top/atfirst01.jpg" alt="">
@@ -235,11 +318,15 @@ Focus Your Talent.<br>
               <div class="arrow"><span class="c-icon afters"></span><span class="c-icon befores"></span></div>
             </div>
           </a>
+        </div>
           
         </div>
 
       </div>
     </section>
+  -->
+
+
 
     <section class="entrys">
       <div class="inner">
@@ -283,12 +370,22 @@ Focus Your Talent.<br>
   <script>
     if (typeof ScrollTrigger !== "undefined" && typeof gsap !== "undefined") {
       gsap.registerPlugin(ScrollTrigger);
-      const visualImage = document.querySelector("#kv .image");
+      const visualImage = document.querySelector("#videos .image");
       const concept = document.querySelector("#concept");
       const copy = document.querySelector("#copy");
       const visualMask = document.querySelector(".image-mask");
       const newsPanel = document.querySelector("#news");
       const entryBtns = document.querySelector("#top_entry_btns");
+      const showConceptOverlay = () => {
+        if (concept) {
+          concept.classList.remove("is-hidden");
+        }
+      };
+      const hideConceptOverlay = () => {
+        if (concept) {
+          concept.classList.add("is-hidden");
+        }
+      };
 
       const getConceptHeight = () => {
         if (!concept) return 0;
@@ -313,7 +410,7 @@ Focus Your Talent.<br>
 
       if (visualImage) {
         gsap.set(visualImage, {
-          scale: 0.18,
+          scale: 0.3,
           transformOrigin: "center center"
         });
 
@@ -328,7 +425,7 @@ Focus Your Talent.<br>
 
         const visualTimeline = gsap.timeline({
           scrollTrigger: {
-            trigger: "#kv",
+            trigger: "#videos",
             start: "top top",
             end: () => `+=${window.innerHeight * 2}`,
             scrub: true,
@@ -347,7 +444,7 @@ Focus Your Talent.<br>
         visualTimeline.to(
           visualImage,
           {
-            scale: 0.5,
+            scale: 1,
             ease: "power1.out"
           },
           0
@@ -364,9 +461,9 @@ Focus Your Talent.<br>
           );
         }
 
-        if (newsPanel || entryBtns) {
+        if (newsPanel) {
           visualTimeline.to(
-            [newsPanel, entryBtns].filter(Boolean),
+            [newsPanel].filter(Boolean),
             {
               opacity: 0,
               ease: "power1.out"
@@ -382,8 +479,18 @@ Focus Your Talent.<br>
               opacity: 1,
               ease: "power1.out"
             },
-            0
+            -0.3
           );
+        }
+
+        if (concept) {
+          ScrollTrigger.create({
+            trigger: "#contents",
+            start: "top bottom",
+            end: "top top",
+            onEnter: hideConceptOverlay,
+            onEnterBack: showConceptOverlay
+          });
         }
       }
 
@@ -393,6 +500,7 @@ Focus Your Talent.<br>
         return `top top+=${offset}px`;
       };
 
+  
       const slideshow = document.querySelector(".slideshow");
       if (slideshow) {
         const tween = gsap.to(slideshow, {
@@ -401,7 +509,8 @@ Focus Your Talent.<br>
 
         ScrollTrigger.create({
           trigger: slideshow,
-          start: () => getSlideshowStartOffset(),
+          //start: () => getSlideshowStartOffset(),
+          start: "top top",
           end: () => "+=" + window.innerWidth * 3,
           pin: true,
           pinSpacing: true,
@@ -409,10 +518,72 @@ Focus Your Talent.<br>
           scrub: 1,
           animation: tween,
           invalidateOnRefresh: true,
+          snap: [0, 0.5, 1]
         });
       }
       
     }
+
+
+
+
+    gsap.registerPlugin(ScrollTrigger);
+
+const headerElement = document.querySelector('#recruit_header');
+const getHeaderHeight = () => Math.max(0, Math.round(headerElement?.offsetHeight ?? 0));
+let headerHeight = getHeaderHeight();
+
+const updateHeaderHeight = () => {
+  headerHeight = getHeaderHeight();
+};
+
+window.addEventListener('resize', () => {
+  updateHeaderHeight();
+  ScrollTrigger.refresh();
+});
+
+const sections = gsap.utils.toArray(".horizontal__item");
+let maxWidth = 0;
+
+const getMaxWidth = () => {
+  maxWidth = 0;
+  sections.forEach(section => {
+    maxWidth += section.offsetWidth;
+    maxWidth += gsap.getProperty(section, 'marginLeft');
+  });
+  maxWidth += 20;
+  maxWidth += window.innerWidth;
+  maxWidth -= sections[0].offsetWidth;
+  return maxWidth;
+};
+
+getMaxWidth();
+ScrollTrigger.addEventListener("refreshInit", () => {
+  updateHeaderHeight();
+  getMaxWidth();
+});
+
+gsap.set('section.spacer', { minHeight: window.innerHeight - document.querySelector('.horizontal').offsetHeight });
+
+const slideshow = document.querySelector(".horizontal");
+
+gsap.to(sections, {
+  x: () => -(slideshow.scrollWidth - window.innerWidth + 50),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".horizontal",
+    pin: '.wrapper',
+    scrub: 0.5,
+    markers: false,
+    start: () => `top,top-=${headerHeight}`,
+    end: () => "+=" + window.innerWidth * 3.5,
+    invalidateOnRefresh: true } });
+
+
+
+
+
+
   </script>
 </body>
 </html>

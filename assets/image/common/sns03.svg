@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="19" viewBox="0 0 21 19">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_140415" data-name="長方形 140415" width="21" height="19" transform="translate(-1.092 -0.137)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="sns03" transform="translate(1.092 0.137)" clip-path="url(#clip-path)">
+    <path id="パス_794" data-name="パス 794" d="M13.332,18.8H5.467A5.467,5.467,0,0,1,0,13.341V5.457A5.467,5.467,0,0,1,5.467,0h7.865A5.467,5.467,0,0,1,18.8,5.457v7.884A5.467,5.467,0,0,1,13.332,18.8ZM5.467,1.72A3.743,3.743,0,0,0,1.724,5.457v7.884a3.743,3.743,0,0,0,3.743,3.737h7.865a3.743,3.743,0,0,0,3.743-3.737V5.457A3.743,3.743,0,0,0,13.332,1.72H5.467Z" transform="translate(0 0.065)" fill="#fff"/>
+    <path id="パス_795" data-name="パス 795" d="M29.194,34.054a4.807,4.807,0,1,1,4.814-4.807A4.817,4.817,0,0,1,29.194,34.054Zm0-7.931a3.124,3.124,0,1,0,3.128,3.124,3.128,3.128,0,0,0-3.128-3.124Z" transform="translate(-19.797 -19.781)" fill="#fff"/>
+    <ellipse id="楕円形_6" data-name="楕円形 6" cx="1.149" cy="1.147" rx="1.149" ry="1.147" transform="translate(13.3 3.324)" fill="#fff"/>
+  </g>
+</svg>
