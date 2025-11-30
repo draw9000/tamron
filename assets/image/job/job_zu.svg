@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1340" height="810.75" viewBox="0 0 1340 810.75">
+  <defs>
+    <filter id="長方形_140488" x="0" y="0" width="1340" height="810.75" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feFlood flood-color="#b4b4b4" flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="job_zu" transform="translate(-54.934 -397)">
+    <g id="グループ_3050" data-name="グループ 3050" transform="translate(-15.457 -159)">
+      <g transform="matrix(1, 0, 0, 1, 70.39, 556)" filter="url(#長方形_140488)">
+        <rect id="長方形_140488-2" data-name="長方形 140488" width="1220" height="690.75" transform="translate(60 60)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="グループ_3047" data-name="グループ 3047" transform="translate(-41.542 -185.929)">
+      <g id="コンポーネント_37_57" data-name="コンポーネント 37 – 57" transform="translate(1022 1218.429)">
+        <rect id="長方形_140486" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+        <text id="人事" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-14" y="16">人事</tspan></text>
+      </g>
+      <g id="コンポーネント_37_56" data-name="コンポーネント 37 – 56" transform="translate(883 1218.429)">
+        <rect id="長方形_140486-2" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+        <text id="総務" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-14" y="16">総務</tspan></text>
+      </g>
+      <g id="コンポーネント_37_53" data-name="コンポーネント 37 – 53" transform="translate(744 1218.429)">
+        <rect id="長方形_140486-3" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+        <text id="情報システム" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-41.79" y="16">情報</tspan><tspan y="16">システム</tspan></text>
+      </g>
+      <g id="コンポーネント_37_52" data-name="コンポーネント 37 – 52" transform="translate(605 1218.429)">
+        <rect id="長方形_140486-4" data-name="長方形 140486" width="136" height="80" rx="8" fill="#005bac"/>
+        <text id="経理" transform="translate(19 21.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-14" y="16">経理</tspan></text>
+        <g id="グループ_3052" data-name="グループ 3052">
+          <rect id="長方形_140433" data-name="長方形 140433" width="19" height="13" rx="6.5" transform="translate(113 63)" fill="#fff"/>
+          <path id="パス_826" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(125.5 68.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+        </g>
+        <rect id="長方形_140487" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+      </g>
+      <g id="コンポーネント_37_51" data-name="コンポーネント 37 – 51" transform="translate(466 1218.429)">
+        <rect id="長方形_140486-5" data-name="長方形 140486" width="136" height="80" rx="8" fill="#005bac"/>
+        <text id="法務知財" transform="translate(19 21.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">法務知財</tspan></text>
+        <g id="グループ_3052-2" data-name="グループ 3052">
+          <rect id="長方形_140433-2" data-name="長方形 140433" width="19" height="13" rx="6.5" transform="translate(113 63)" fill="#fff"/>
+          <path id="パス_826-2" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(125.5 68.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+        </g>
+        <rect id="長方形_140487-2" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+      </g>
+      <g id="コンポーネント_37_50" data-name="コンポーネント 37 – 50" transform="translate(327 1218.429)">
+        <rect id="長方形_140486-6" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+        <text id="企業広報" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">企業広報</tspan></text>
+      </g>
+      <g id="コンポーネント_37_49" data-name="コンポーネント 37 – 49" transform="translate(188 1218.429)">
+        <rect id="長方形_140486-7" data-name="長方形 140486" width="136" height="80" rx="8" fill="#005bac"/>
+        <text id="経営企画" transform="translate(19 21.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">経営企画</tspan></text>
+        <g id="グループ_3052-3" data-name="グループ 3052">
+          <rect id="長方形_140433-3" data-name="長方形 140433" width="19" height="13" rx="6.5" transform="translate(113 63)" fill="#fff"/>
+          <path id="パス_826-3" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(125.5 68.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+        </g>
+        <rect id="長方形_140487-3" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+      </g>
+    </g>
+    <g id="グループ_3060" data-name="グループ 3060" transform="translate(-126.066 -116.501)">
+      <path id="合体_3" data-name="合体 3" d="M-347.935,15618v-48H658.133v48Zm1006.068-48.5,20,24-20,24Z" transform="translate(590.934 -14995)" fill="#555"/>
+      <text id="企画" transform="translate(290.523 604.501)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-14" y="0">企画</tspan></text>
+      <g id="コンポーネント_74_4" data-name="コンポーネント 74 – 4" transform="translate(1031.065 574.501)">
+        <path id="パス_880" data-name="パス 880" d="M353.036,575l20,24-20,24" transform="translate(-353.036 -575)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+      </g>
+      <text id="量産" transform="translate(922.013 604.501)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-14" y="0">量産</tspan></text>
+      <g id="コンポーネント_74_3" data-name="コンポーネント 74 – 3" transform="translate(796.056 574.501)">
+        <path id="パス_880-2" data-name="パス 880" d="M353.036,575l20,24-20,24" transform="translate(-353.036 -575)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+      </g>
+      <text id="試作" transform="translate(687.002 604.501)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-14" y="0">試作</tspan></text>
+      <g id="コンポーネント_74_2" data-name="コンポーネント 74 – 2" transform="translate(561.044 574.501)">
+        <path id="パス_880-3" data-name="パス 880" d="M353.036,575l20,24-20,24" transform="translate(-353.036 -575)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+      </g>
+      <text id="設計" transform="translate(451.992 604.501)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-14" y="0">設計</tspan></text>
+      <g id="コンポーネント_74_1" data-name="コンポーネント 74 – 1" transform="translate(335.832 575)">
+        <path id="パス_880-4" data-name="パス 880" d="M353.036,575l20,24-20,24" transform="translate(-353.036 -575)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+      </g>
+      <text id="出荷販売" transform="translate(1147.866 604.501)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="0">出荷販売</tspan></text>
+    </g>
+    <g id="グループ_3434" data-name="グループ 3434" transform="translate(-209.515 -108.499)">
+      <g id="グループ_3434-2" data-name="グループ 3434" transform="translate(563 1)">
+        <g id="グループ_3049" data-name="グループ 3049" transform="translate(799.973 655.499)">
+          <rect id="長方形_140486-8" data-name="長方形 140486" width="149.95" height="564" rx="8" fill="#e6e6e6"/>
+        </g>
+      </g>
+      <g id="グループ_3044" data-name="グループ 3044" transform="translate(1001.973)">
+        <g id="コンポーネント_37_95" data-name="コンポーネント 37 – 95" transform="translate(188 819.499)">
+          <rect id="長方形_140486-9" data-name="長方形 140486" width="136" height="80" rx="8" fill="#005bac"/>
+          <text id="マーケ_ティング" data-name="マーケ
+ティング" transform="translate(19 11.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-21" y="16">マーケ</tspan><tspan x="-27.58" y="35.6">ティング</tspan></text>
+          <g id="グループ_3052-4" data-name="グループ 3052">
+            <rect id="長方形_140433-4" data-name="長方形 140433" width="19" height="13" rx="6.5" transform="translate(113 63)" fill="#fff"/>
+            <path id="パス_826-4" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(125.5 68.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+          </g>
+          <rect id="長方形_140487-4" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+        </g>
+        <g id="コンポーネント_37_96" data-name="コンポーネント 37 – 96" transform="translate(188 737.499)">
+          <rect id="長方形_140486-10" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+          <text id="業務管理" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">業務管理</tspan></text>
+        </g>
+        <g id="コンポーネント_37_97" data-name="コンポーネント 37 – 97" transform="translate(188 655.499)">
+          <rect id="長方形_140486-11" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+          <text id="営業" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-14" y="16">営業</tspan></text>
+        </g>
+      </g>
+      <g id="グループ_3055" data-name="グループ 3055" transform="translate(180)">
+        <g id="グループ_3049-2" data-name="グループ 3049" transform="translate(799.973 655.499)">
+          <rect id="長方形_140486-12" data-name="長方形 140486" width="172.945" height="430.48" rx="8" fill="#ccdeee"/>
+          <text id="工_場" data-name="工
+場" transform="translate(0 35.378)" fill="#005bac" font-size="16" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-8" y="19">工</tspan><tspan x="-8" y="37">場</tspan></text>
+        </g>
+        <g id="グループ_3053" data-name="グループ 3053" transform="translate(817.973 755.143)">
+          <g id="グループ_3043" data-name="グループ 3043" transform="translate(0 -655.499)">
+            <g id="コンポーネント_37_98" data-name="コンポーネント 37 – 98" transform="translate(0 737.499)">
+              <rect id="長方形_140486-13" data-name="長方形 140486" width="137" height="80" rx="8" fill="#005bac"/>
+              <text id="レンズ製造_技術開発" data-name="レンズ製造
+技術開発" transform="translate(19.475 11.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-34.86" y="16">レンズ</tspan><tspan y="16">製造</tspan><tspan x="-28" y="35.6">技術開発</tspan></text>
+              <g id="グループ_3052-5" data-name="グループ 3052" transform="translate(114 63)">
+                <rect id="長方形_140433-5" data-name="長方形 140433" width="19" height="13" rx="6.5" fill="#fff"/>
+                <path id="パス_826-5" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(12.5 5.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+              </g>
+              <rect id="長方形_140487-5" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+            </g>
+            <g id="コンポーネント_37_99" data-name="コンポーネント 37 – 99" transform="translate(0 655.499)">
+              <rect id="長方形_140486-14" data-name="長方形 140486" width="137" height="80" rx="8" fill="#005bac"/>
+              <text id="レンズ組立_技術開発" data-name="レンズ組立
+技術開発" transform="translate(19.475 11.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-34.86" y="16">レンズ</tspan><tspan y="16">組立</tspan><tspan x="-28" y="35.6">技術開発</tspan></text>
+              <g id="グループ_3052-6" data-name="グループ 3052" transform="translate(114 63)">
+                <rect id="長方形_140433-6" data-name="長方形 140433" width="19" height="13" rx="6.5" fill="#fff"/>
+                <path id="パス_826-6" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(12.5 5.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+              </g>
+              <rect id="長方形_140487-6" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="グループ_3048" data-name="グループ 3048" transform="translate(160)">
+        <g id="グループ_3042" data-name="グループ 3042" transform="translate(458.973)">
+          <g id="コンポーネント_37_100" data-name="コンポーネント 37 – 100" transform="translate(188 819.499)">
+            <rect id="長方形_140486-15" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+            <text id="生産管理" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">生産管理</tspan></text>
+          </g>
+          <g id="コンポーネント_37_101" data-name="コンポーネント 37 – 101" transform="translate(188 737.499)">
+            <rect id="長方形_140486-16" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+            <text id="品質保証" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">品質保証</tspan></text>
+          </g>
+          <g id="コンポーネント_37_102" data-name="コンポーネント 37 – 102" transform="translate(188 655.499)">
+            <rect id="長方形_140486-17" data-name="長方形 140486" width="136" height="80" rx="8" fill="#005bac"/>
+            <text id="資材調達" transform="translate(19 21.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">資材調達</tspan></text>
+            <g id="グループ_3052-7" data-name="グループ 3052">
+              <rect id="長方形_140433-7" data-name="長方形 140433" width="19" height="13" rx="6.5" transform="translate(113 63)" fill="#fff"/>
+              <path id="パス_826-7" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(125.5 68.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+            </g>
+            <rect id="長方形_140487-7" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+          </g>
+        </g>
+        <g id="グループ_3041" data-name="グループ 3041" transform="translate(319.973)">
+          <g id="コンポーネント_37_103" data-name="コンポーネント 37 – 103" transform="translate(188 983.499)">
+            <rect id="長方形_140486-18" data-name="長方形 140486" width="136" height="80" rx="8" fill="#005bac"/>
+            <text id="試作加工" transform="translate(19 21.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">試作加工</tspan></text>
+            <g id="グループ_3052-8" data-name="グループ 3052">
+              <rect id="長方形_140433-8" data-name="長方形 140433" width="19" height="13" rx="6.5" transform="translate(113 63)" fill="#fff"/>
+              <path id="パス_826-8" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(125.5 68.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+            </g>
+            <rect id="長方形_140487-8" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+          </g>
+          <g id="コンポーネント_37_104" data-name="コンポーネント 37 – 104" transform="translate(188 901.499)">
+            <rect id="長方形_140486-19" data-name="長方形 140486" width="136" height="80" rx="8" fill="#005bac"/>
+            <text id="生産技術" transform="translate(19 21.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">生産技術</tspan></text>
+            <g id="グループ_3052-9" data-name="グループ 3052">
+              <rect id="長方形_140433-9" data-name="長方形 140433" width="19" height="13" rx="6.5" transform="translate(113 63)" fill="#fff"/>
+              <path id="パス_826-9" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(125.5 68.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+            </g>
+            <rect id="長方形_140487-9" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+          </g>
+          <g id="コンポーネント_37_105" data-name="コンポーネント 37 – 105" transform="translate(188 819.499)">
+            <rect id="長方形_140486-20" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+            <text id="ソフト設計" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-35" y="16">ソフト</tspan><tspan y="16">設計</tspan></text>
+          </g>
+          <g id="コンポーネント_37_106" data-name="コンポーネント 37 – 106" transform="translate(188 737.499)">
+            <rect id="長方形_140486-21" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+            <text id="電気電子設計" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-42" y="16">電気電子設計</tspan></text>
+          </g>
+          <g id="コンポーネント_37_107" data-name="コンポーネント 37 – 107" transform="translate(188 655.499)">
+            <rect id="長方形_140486-22" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+            <text id="機構設計" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">機構設計</tspan></text>
+          </g>
+        </g>
+        <g id="グループ_3040" data-name="グループ 3040" transform="translate(180.973)">
+          <g id="コンポーネント_37_108" data-name="コンポーネント 37 – 108" transform="translate(188 901.499)">
+            <rect id="長方形_140486-23" data-name="長方形 140486" width="136" height="80" rx="8" fill="#005bac"/>
+            <text id="金型設計" transform="translate(19 21.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">金型設計</tspan></text>
+            <g id="グループ_3052-10" data-name="グループ 3052">
+              <rect id="長方形_140433-10" data-name="長方形 140433" width="19" height="13" rx="6.5" transform="translate(113 63)" fill="#fff"/>
+              <path id="パス_826-10" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(125.5 68.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+            </g>
+            <rect id="長方形_140487-10" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+          </g>
+          <g id="コンポーネント_37_109" data-name="コンポーネント 37 – 109" transform="translate(188 819.499)">
+            <rect id="長方形_140486-24" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+            <text id="CAEシミュレー_ション" data-name="CAEシミュレー
+ション" transform="translate(19 20)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-47.936" y="16">CAE</tspan><tspan y="16">シミュレー</tspan><tspan x="-21" y="35.6">ション</tspan></text>
+          </g>
+          <g id="コンポーネント_37_110" data-name="コンポーネント 37 – 110" transform="translate(188 737.499)">
+            <rect id="長方形_140486-25" data-name="長方形 140486" width="136" height="80" rx="8" fill="#005bac"/>
+            <text id="光学装置開発" transform="translate(19 21.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-42" y="16">光学装置開発</tspan></text>
+            <g id="グループ_3052-11" data-name="グループ 3052">
+              <rect id="長方形_140433-11" data-name="長方形 140433" width="19" height="13" rx="6.5" transform="translate(113 63)" fill="#fff"/>
+              <path id="パス_826-11" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(125.5 68.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+            </g>
+            <rect id="長方形_140487-11" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+          </g>
+          <g id="コンポーネント_37_111" data-name="コンポーネント 37 – 111" transform="translate(188 655.499)">
+            <rect id="長方形_140486-26" data-name="長方形 140486" width="136" height="80" rx="8" fill="#005bac"/>
+            <text id="光学設計" transform="translate(19 21.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">光学設計</tspan></text>
+            <g id="グループ_3052-12" data-name="グループ 3052">
+              <rect id="長方形_140433-12" data-name="長方形 140433" width="19" height="13" rx="6.5" transform="translate(113 63)" fill="#fff"/>
+              <path id="パス_826-12" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(125.5 68.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+            </g>
+            <rect id="長方形_140487-12" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+          </g>
+        </g>
+      </g>
+      <g id="グループ_3057" data-name="グループ 3057" transform="translate(167.973)">
+        <g id="グループ_3039" data-name="グループ 3039" transform="translate(0 186)">
+          <g id="コンポーネント_37_112" data-name="コンポーネント 37 – 112" transform="translate(188 819.499)">
+            <rect id="長方形_140486-27" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+            <text id="レンズ技術_開発" data-name="レンズ技術
+開発" transform="translate(19 20)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-34.86" y="16">レンズ</tspan><tspan y="16">技術</tspan><tspan x="-14" y="35.6">開発</tspan></text>
+          </g>
+          <g id="コンポーネント_37_113" data-name="コンポーネント 37 – 113" transform="translate(188 737.499)">
+            <rect id="長方形_140486-28" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+            <text id="新規光学製品_開発" data-name="新規光学製品
+開発" transform="translate(19 20)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-42" y="16">新規光学製品</tspan><tspan x="-14" y="35.6">開発</tspan></text>
+          </g>
+          <g id="コンポーネント_37_114" data-name="コンポーネント 37 – 114" transform="translate(188 655.499)">
+            <rect id="長方形_140486-29" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+            <text id="研究開発" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">研究開発</tspan></text>
+          </g>
+        </g>
+        <g id="グループ_3038" data-name="グループ 3038">
+          <g id="コンポーネント_37_115" data-name="コンポーネント 37 – 115" transform="translate(188 737.499)">
+            <rect id="長方形_140486-30" data-name="長方形 140486" width="136" height="80" rx="8" fill="#ccdeee"/>
+            <text id="商品企画" transform="translate(19 30)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-28" y="16">商品企画</tspan></text>
+          </g>
+          <g id="コンポーネント_37_116" data-name="コンポーネント 37 – 116" transform="translate(188 655.499)">
+            <rect id="長方形_140486-31" data-name="長方形 140486" width="136" height="80" rx="8" fill="#005bac"/>
+            <text id="営業-2" data-name="営業" transform="translate(19 21.143)" fill="#fff" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-14" y="16">営業</tspan></text>
+            <g id="グループ_3052-13" data-name="グループ 3052">
+              <rect id="長方形_140433-13" data-name="長方形 140433" width="19" height="13" rx="6.5" transform="translate(113 63)" fill="#fff"/>
+              <path id="パス_826-13" data-name="パス 826" d="M0,0,3,3,0,6" transform="translate(125.5 68.5) rotate(90)" fill="none" stroke="#005bac" stroke-width="1"/>
+            </g>
+            <rect id="長方形_140487-13" data-name="長方形 140487" width="128" height="1" transform="translate(4 57)" fill="#fff" opacity="0.1"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <text id="ユーザー_お取引先企業" data-name="ユーザー・
+お取引先企業" transform="translate(1170.323 791)" fill="#005bac" font-size="16" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-39.84" y="19">ユーザー・</tspan><tspan x="-48" y="47.8">お</tspan><tspan y="47.8">取引先企業</tspan></text>
+    <text id="_コーポレート" transform="translate(146.458 1002.5)" fill="#005bac" font-size="14" font-family="NotoSansJP-Medium, Noto Sans JP" font-weight="500"><tspan x="-45.934" y="16">_コーポレート</tspan></text>
+  </g>
+</svg>

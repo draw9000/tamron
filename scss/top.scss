@@ -119,19 +119,70 @@
  
   #news{
     position: absolute;
-    bottom: 2rem;
+    bottom: 3rem;
     left: 2rem;
+    .news_inner{
+      position: relative;
+    }
     dl{
+      position: absolute;
+      top:0;
+      left: 0;
       display: flex;
       color: $w;
       font-size: 0.875rem;
+      opacity: 0;
       dt{
         width: 8em;
       }
       dd{
         flex:1;
+        white-space: nowrap;
       }
     }
+
+    .fadeInDown {
+  opacity: 0;
+}
+.fadeInDown.run {
+  animation: fadeInDown 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+.fadeOutDown {
+  opacity: 1;
+}
+.fadeOutDown.run {
+  animation: fadeOutDown 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+
   }
   
 

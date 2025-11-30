@@ -47,7 +47,7 @@ const handleResizeVars = () => {
   updateSlideshowVars();
 };
 
-updateSlideshowVars();
+handleResizeVars();
 window.addEventListener('resize', handleResizeVars);
 
 

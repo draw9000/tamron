@@ -176,6 +176,11 @@ color: $m;
 #bread{
   margin: 6rem 1vw 0 0;
   font-size:.75rem;
+  &.fixed{
+    position: fixed;
+    top:0;
+    right: 0;
+  }
   ul{
     display: flex;
     justify-content: flex-end;
@@ -204,5 +209,32 @@ color: $m;
   .lead{
     width: 50%;
     margin: 5rem 5vw 0 auto;
+  }
+}
+
+#visual_header{
+  position: relative;
+  .images{
+    position: relative;
+    &::before{
+      content: "";
+      display: block; position: absolute; width: 100%; height: 100%; top:0; left:0; content:""; z-index:2;
+      background: rgba(#000,0.45);
+    }
+    &:after{
+      content: "";
+      display: block; position: absolute; width: 100%; height: 100%; top:0; left:0; content:""; z-index:2;
+      background: linear-gradient(180deg, rgba(105, 105, 105, 0.00) 51.83%, #000 89.95%);
+      mix-blend-mode: multiply;
+    }
+  }
+  .text_title{
+    position: absolute;
+    top:50%;left:5%;transform:translateY(-50%);
+    z-index: 33;
+    color: $w;
+    p.en{
+      color: $w;
+    }
   }
 }
