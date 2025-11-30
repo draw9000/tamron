@@ -1,0 +1,9 @@
+{
+	"Insert <br>": {
+		"prefix": "br",
+		"body": [
+			"<br>"
+		],
+		"description": "Insert <br> tag"
+	}
+}

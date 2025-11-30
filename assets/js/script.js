@@ -9,6 +9,7 @@ _ua.Tablet = /iPad/i.test(navigator.userAgent) && !/iPhone|iPod/i.test(navigator
 
 
 const lenis = new Lenis();
+window.lenis = lenis;
 const raf = (time) => {
   lenis.raf(time);
   requestAnimationFrame(raf);
@@ -77,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && typeof SplitText !== 'undefined') {
       clearInterval(checkGSAP);
       initializeTopMessageAnimation();
-      initializeTopMessageAnimation();
       // introAnimation(); // Loading完了後に実行するためコメントアウト
     }
   }, 100);
@@ -141,11 +141,11 @@ window.introAnimation = function introAnimation() {
 
   tl.fromTo("#top_entry_btns", {
     opacity: 0,
-    y: 20,
+    //y: 20,
   }, {
     duration: 1.5,
     opacity: 1,
-    y: 0,
+    //y: 0,
     ease: "power3.out"
   }, "-=2");
 }
@@ -157,8 +157,13 @@ function initializeTopMessageAnimation() {
 
     let conceptTrigger;
     let linesInitialized = false;
+    let textTriggers = []; // Store ScrollTriggers for text lines
 
     const txtiliner = () => {
+      // Clear previous triggers if any
+      textTriggers.forEach(t => t.kill());
+      textTriggers = [];
+
       split.lines.forEach((target) => {
         gsap.to(target, {
           backgroundPositionX: 0,
@@ -172,6 +177,25 @@ function initializeTopMessageAnimation() {
             end: "bottom bottom"
           }
         });
+        // Store the trigger instance associated with the animation
+        // Note: gsap.to returns a Tween, and the scrollTrigger is attached to it.
+        // However, to properly kill it, we might need to access the ScrollTrigger instance directly if we created it separately.
+        // In this case, since it's inside gsap.to, ScrollTrigger manages it.
+        // But to be safe on resize, we can use ScrollTrigger.getAll() or manage IDs.
+        // A better approach for this specific structure:
+        const anim = gsap.to(target, {
+          backgroundPositionX: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: target,
+            markers: false,
+            pinSpacing: true,
+            scrub: 1.5,
+            start: "top center",
+            end: "bottom bottom"
+          }
+        });
+        if (anim.scrollTrigger) textTriggers.push(anim.scrollTrigger);
       });
     };
 
@@ -202,7 +226,12 @@ function initializeTopMessageAnimation() {
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        //ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        // Cleanup specific triggers
+        textTriggers.forEach(t => t.kill());
+        textTriggers = [];
+
+        if (conceptTrigger) conceptTrigger.kill();
+
         split.revert(); // SplitTextをいったん戻す
         split = new SplitText("#concept .in p", { type: "lines" }); // 再生成
         createConceptTrigger();
@@ -217,6 +246,9 @@ $(function () {
 
   $('#recruit_header').load('/header.html?v=2', function () {
     console.log("Header loaded");
+    // Move #top_entry_btns to body to avoid flexbox layout issues in header
+    $('#recruit_header > #top_entry_btns').appendTo('body');
+
     handleDrawer(".draw01", ".drawer01");
     handleDrawer(".draw02", ".drawer02");
     handleDrawer(".draw03", ".drawer03");
@@ -352,8 +384,11 @@ $(function () {
     handleScrollState();
   });
 
-  $(document).on('click', 'a[href^="#"]', function () {
-    if ($(this).hasClass('no-scroll')) return;
+  $(document).on('click', 'a[href^="#"]', function (e) {
+    if ($(this).hasClass('no-scroll') || $(this).hasClass('nolink')) {
+      e.preventDefault();
+      return;
+    }
     handleAnchorScroll($(this).attr("href"));
     return false;
   });
