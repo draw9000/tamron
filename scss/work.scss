@@ -657,7 +657,8 @@ z-index: 100;
 /// 
 
 .job_zu{
-  max-width: 1300px;
+  max-width: 86%;
+  
   margin:auto;
   transform: translateY(-10rem);
   position: relative;
@@ -868,6 +869,223 @@ z-index: 100;
     &.light {
       background: $color-blue-light;
       color: $color-blue-dark;
+    }
+  }
+}
+
+// Sticky Content Section
+#sticky_cont {
+  
+  margin: 0 auto 10rem;
+  padding: 0 8vw;
+  display: flex;
+  gap: 4rem;
+  position: relative;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+
+  // Variables
+  $color-blue-dark: #005BAC;
+  $color-blue-light: #DDE8F4;
+  $color-gray-text: #666;
+  $color-gray-bg: #f5f5f5;
+  $color-white: #ffffff;
+
+  .left {
+    width: 200px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+
+    .title {
+      margin-bottom: 2rem;
+      .en {
+        color: $color-blue-dark;
+        font-weight: bold;
+        font-size: 1rem;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    .menu {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          margin-bottom: 1rem;
+          
+          a {
+            display: block;
+            padding: 0.8rem 1rem;
+            background: $color-gray-bg;
+            color: $color-blue-dark;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-weight: bold;
+
+            &:hover {
+              background: $color-white;
+              box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+          }
+          
+          // Style for the first item to match image (white bg)
+          &:first-child a {
+             background: $color-white;
+             border: 1px solid #eee;
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    flex: 1;
+
+    .jobbox {
+      .title {
+        margin-bottom: 2rem;
+        .jp {
+          color: $color-blue-dark;
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+      }
+
+      .svisual {
+        margin-bottom: 4rem;
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+
+      .job_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        .job {
+          display: block;
+          background: #fff;
+          border: 1px solid #eee;
+          padding: 2.5rem;
+          text-decoration: none;
+          color: inherit;
+          position: relative;
+          transition: color 0.5s; // Smooth text color change
+          border-radius: 4px;
+          overflow: hidden; // Ensure pseudo-elements stay within rounded corners
+
+          .in{
+            position: relative;
+            z-index: 30;
+            height: 100%;
+          }
+
+          // Background Image Element
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+
+          // Dark Overlay Element
+          &::before {
+             content: "";
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             z-index: 2;
+             background: rgba(0,0,0,0.7);
+             opacity: 0;
+             transition: opacity 0.5s ease;
+          }
+
+          // Specific Images
+          // Specific Images
+          &.job01::after { background-image: url("/assets/image/job/job01.jpg"); }
+          &.job02::after { background-image: url("/assets/image/job/job02.jpg"); }
+          &.job03::after { background-image: url("/assets/image/job/job03.jpg"); }
+          &.job04::after { background-image: url("/assets/image/job/job04.jpg"); }
+          &.job05::after { background-image: url("/assets/image/job/job05.jpg"); }
+          &.job06::after { background-image: url("/assets/image/job/job06.jpg"); }
+          &.job07::after { background-image: url("/assets/image/job/job07.jpg"); }
+          &.job08::after { background-image: url("/assets/image/job/job08.jpg"); }
+          &.job09::after { background-image: url("/assets/image/job/job09.jpg"); }
+          &.job10::after { background-image: url("/assets/image/job/job10.jpg"); }
+          &.job11::after { background-image: url("/assets/image/job/job11.jpg"); }
+          &.job12::after { background-image: url("/assets/image/job/job12.jpg"); }
+
+          &:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: #fff !important;
+            
+            &::after {
+                opacity: 1;
+            }
+            &::before {
+                opacity: 1;
+            }
+          }
+
+          .jobtitle {
+           
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+          }
+
+          h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            
+          }
+
+          p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            
+            margin-bottom: 3rem;
+          }
+
+          .plus_btn {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 50;
+            
+            .icon {
+              width: 2.5rem;
+              height: 2.5rem;
+              background: $color-blue-dark;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #fff;
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
     }
   }
 }
